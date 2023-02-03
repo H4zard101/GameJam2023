@@ -148,7 +148,7 @@ public class Gameboard : MonoBehaviour
 
     void UpdateTurnIndicator()
     {
-        TurnIndicatorText.text = (m_CurrentTeam == Unit.Team.White ? "White" : "Black") + " is playing";
+        //TurnIndicatorText.text = (m_CurrentTeam == Unit.Team.White ? "White" : "Black") + " is playing";
     }
 
     private void OnDrawGizmos()
