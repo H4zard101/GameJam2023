@@ -8,6 +8,11 @@ public class TurretLockOn : MonoBehaviour
     private Transform target;
     public float range = 10.0F;
 
+    public GameObject bulletPrefab;
+    public Transform firePoint;
+
+    public float fireRate = 1f;
+    private float fireCountdown = 0f;
     private void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
@@ -49,6 +54,26 @@ public class TurretLockOn : MonoBehaviour
         // For some reason the X has to be - overwise the barrel poits up side down 
         rotationPart.rotation = Quaternion.Euler(-rotation.x, rotation.y, 0f);
 
+
+        if(fireCountdown <= 0f)
+        {
+            Shoot();
+            fireCountdown = 1f / fireRate;
+        }
+
+        fireCountdown -= Time.deltaTime;
+    }
+
+    public void Shoot()
+    {
+        Debug.Log("Shoot");
+        GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Bullet bullet = bulletGO.GetComponent<Bullet>();
+
+        if(bullet != null)
+        {
+            bullet.Seek(target);
+        }
     }
     private void OnDrawGizmosSelected()
     {
