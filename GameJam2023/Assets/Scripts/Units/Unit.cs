@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class Unit : MonoBehaviour
 {
+    public GameObject prefab;
     public enum Team
     {
         White,

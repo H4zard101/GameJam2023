@@ -144,9 +144,15 @@ public class UserControl : MonoBehaviour
                 var unit = Gameboard.Instance.GetUnit(clickedCell);
 
                 //only if there is no unit on the target cell do we move there
-                if (unit == null)
+                /*if (unit == null)
                 {
                     MoveCommand cmd = new MoveCommand(m_SelectedUnit.CurrentCell, clickedCell);
+                    CommandManager.Instance.AddCommand(cmd);
+                }
+  */
+                if(unit == null)
+                {
+                    PlaceTurretCommand cmd = new PlaceTurretCommand(clickedCell);
                     CommandManager.Instance.AddCommand(cmd);
                 }
 

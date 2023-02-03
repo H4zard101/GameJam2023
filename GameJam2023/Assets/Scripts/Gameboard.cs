@@ -132,6 +132,11 @@ public class Gameboard : MonoBehaviour
         }
     }
 
+    public void PlaceUnit(Unit U, Vector3Int locationToPlace)
+    {
+        Instantiate(U.prefab, locationToPlace, Quaternion.identity);
+    }
+
     public void SwitchTeam()
     {
         m_CurrentTeam = m_CurrentTeam == Unit.Team.Black ? Unit.Team.White : Unit.Team.Black;
