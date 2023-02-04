@@ -13,5 +13,8 @@ public class AudioReferences : MonoBehaviour
     public EventReference turretDeathEvent;
     public EventReference treeHitEvent;
     public EventReference treeDeathEvent;
+    public EventReference gameMusicEvent;
+    public EventReference menuMusicEvent;
+    public EventReference ambienceEvent;
     
 }

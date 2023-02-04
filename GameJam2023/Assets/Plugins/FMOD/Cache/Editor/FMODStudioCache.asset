@@ -81,6 +81,59 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 500
+--- !u!114 &-4306524478035439306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/GameMusic
+  m_EditorClassIdentifier: 
+  Path: event:/GameMusic
+  Guid:
+    Data1: -1139459853
+    Data2: 1330922384
+    Data3: 1644228765
+    Data4: -1473208592
+  Banks:
+  - {fileID: 841726890423420295}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 5749343402577053233}
+  - {fileID: -2762043908359521614}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 116937
+--- !u!114 &-2762043908359521614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/GameMusic/TreeCount
+  m_EditorClassIdentifier: 
+  Name: TreeCount
+  StudioPath: 
+  Min: 0
+  Max: 10
+  Default: 0
+  ID:
+    data1: 3254180643
+    data2: 3521781786
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-1939775012116228330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,12 +211,15 @@ MonoBehaviour:
   - {fileID: -5748771025249127692}
   - {fileID: -1477215412994707259}
   - {fileID: -7895680541806623463}
+  - {fileID: 2857084380235951174}
+  - {fileID: 4024538666565523653}
+  - {fileID: -4306524478035439306}
   EditorParameters: []
   MasterBanks:
   - {fileID: 841726890423420295}
   StringsBanks:
   - {fileID: 59222271814105422}
-  cacheTime: 638111419936604920
+  cacheTime: 638111486824018520
   cacheVersion: 131601
 --- !u!114 &59222271814105422
 MonoBehaviour:
@@ -180,10 +236,10 @@ MonoBehaviour:
   Path: FMODBanks/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638111419936604920
+  lastModified: 638111486824018520
   FileSizes:
   - Name: 
-    Value: 1202
+    Value: 1426
   Exists: 1
 --- !u!114 &336151326791432705
 MonoBehaviour:
@@ -227,8 +283,88 @@ MonoBehaviour:
   Path: FMODBanks/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638111419936584982
+  lastModified: 638111486823998591
   FileSizes: []
+  Exists: 1
+--- !u!114 &2857084380235951174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience
+  Guid:
+    Data1: -24927173
+    Data2: 1115743572
+    Data3: -849423221
+    Data4: 797473669
+  Banks:
+  - {fileID: 841726890423420295}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 123345
+--- !u!114 &4024538666565523653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MenuMusic
+  m_EditorClassIdentifier: 
+  Path: event:/MenuMusic
+  Guid:
+    Data1: -793082560
+    Data2: 1189890291
+    Data3: 61419711
+    Data4: 2119757283
+  Banks:
+  - {fileID: 841726890423420295}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 106404
+--- !u!114 &5749343402577053233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/GameMusic/PlayerDead
+  m_EditorClassIdentifier: 
+  Name: PlayerDead
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2183159088
+    data2: 2427091067
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - PlayerAlive
+  - PlayerDead
   Exists: 1
 --- !u!114 &8245608757406242781
 MonoBehaviour:
