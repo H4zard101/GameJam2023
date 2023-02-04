@@ -19,7 +19,7 @@ public class MoveCommand : CommandManager.ICommand
         if (unit != null)
         {
             Gameboard.Instance.MoveUnit(unit, m_To);
-            Gameboard.Instance.SwitchTeam();
+            
         }
     }
 
@@ -31,7 +31,7 @@ public class MoveCommand : CommandManager.ICommand
             Gameboard.Instance.MoveUnit(unit, m_From);
         }
 
-        Gameboard.Instance.SwitchTeam();
+        
     } 
 
 }
