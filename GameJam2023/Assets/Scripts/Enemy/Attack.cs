@@ -16,7 +16,8 @@ public class Attack : MonoBehaviour
     {
         if(collision.gameObject.tag == "MotherTree")
         {
-            //Destroy(gameObject);
+            Destroy(gameObject);
+            AudioPlayback.PlayOneShot(AudioManager.Instance.references.treeHitEvent, null);//Damage tree oneshot
             collision.gameObject.GetComponent<MotherTree>().TakeDamage(damage);
             Debug.Log(collision.gameObject.GetComponent<MotherTree>().Health.ToString());
             
@@ -24,6 +25,7 @@ public class Attack : MonoBehaviour
         if(collision.gameObject.tag == "Tree")
         {
             Destroy(gameObject);
+            AudioPlayback.PlayOneShot(AudioManager.Instance.references.treeHitEvent, null); //Oneshot damage tree
             collision.gameObject.GetComponent<TreeSource>().TakeDamage(damage);
             Debug.Log(collision.gameObject.GetComponent<TreeSource>().Health.ToString());
         }

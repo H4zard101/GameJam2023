@@ -1004,7 +1004,7 @@ PrefabInstance:
     - {fileID: 8421209956387312070, guid: 8d194b8744af3ca4fa483321f7f38bf3, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d194b8744af3ca4fa483321f7f38bf3, type: 3}
---- !u!1001 &2737331451777570547
+--- !u!1001 &5914118638572078210
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1012,54 +1012,54 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5465862514263577607, guid: 779c2fca11810a145ac828acb569c78f, type: 3}
-      propertyPath: m_Name
-      value: GunTurret
-      objectReference: {fileID: 0}
-    - target: {fileID: 6457386174664504290, guid: 779c2fca11810a145ac828acb569c78f, type: 3}
+    - target: {fileID: 3346985283345883539, guid: a1878d3d6c915934c92f60ca7cbe3bc9, type: 3}
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 6457386174664504290, guid: 779c2fca11810a145ac828acb569c78f, type: 3}
+    - target: {fileID: 3346985283345883539, guid: a1878d3d6c915934c92f60ca7cbe3bc9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6457386174664504290, guid: 779c2fca11810a145ac828acb569c78f, type: 3}
+    - target: {fileID: 3346985283345883539, guid: a1878d3d6c915934c92f60ca7cbe3bc9, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6457386174664504290, guid: 779c2fca11810a145ac828acb569c78f, type: 3}
+    - target: {fileID: 3346985283345883539, guid: a1878d3d6c915934c92f60ca7cbe3bc9, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6457386174664504290, guid: 779c2fca11810a145ac828acb569c78f, type: 3}
+    - target: {fileID: 3346985283345883539, guid: a1878d3d6c915934c92f60ca7cbe3bc9, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6457386174664504290, guid: 779c2fca11810a145ac828acb569c78f, type: 3}
+    - target: {fileID: 3346985283345883539, guid: a1878d3d6c915934c92f60ca7cbe3bc9, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6457386174664504290, guid: 779c2fca11810a145ac828acb569c78f, type: 3}
+    - target: {fileID: 3346985283345883539, guid: a1878d3d6c915934c92f60ca7cbe3bc9, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6457386174664504290, guid: 779c2fca11810a145ac828acb569c78f, type: 3}
+    - target: {fileID: 3346985283345883539, guid: a1878d3d6c915934c92f60ca7cbe3bc9, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6457386174664504290, guid: 779c2fca11810a145ac828acb569c78f, type: 3}
+    - target: {fileID: 3346985283345883539, guid: a1878d3d6c915934c92f60ca7cbe3bc9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6457386174664504290, guid: 779c2fca11810a145ac828acb569c78f, type: 3}
+    - target: {fileID: 3346985283345883539, guid: a1878d3d6c915934c92f60ca7cbe3bc9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6457386174664504290, guid: 779c2fca11810a145ac828acb569c78f, type: 3}
+    - target: {fileID: 3346985283345883539, guid: a1878d3d6c915934c92f60ca7cbe3bc9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4338509184248186486, guid: a1878d3d6c915934c92f60ca7cbe3bc9, type: 3}
+      propertyPath: m_Name
+      value: GunTurret
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
-  m_SourcePrefab: {fileID: 100100000, guid: 779c2fca11810a145ac828acb569c78f, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: a1878d3d6c915934c92f60ca7cbe3bc9, type: 3}

@@ -1,4 +1,5 @@
 using Pathfinding;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,6 +22,8 @@ public class MoverAnimation : MonoBehaviour
 
 	IAstarAI ai;
 	Transform tr;
+
+	public float DamageValue = 5f;
 
 	private void Awake()
 	{
@@ -45,18 +48,22 @@ public class MoverAnimation : MonoBehaviour
 			lastTarget = tr.position;
 		}
 
-        if (tr != null)
+        try
+        {
+			GameObject tree = GetComponent<AISetDestination>().target.gameObject;
+			if (tree != null)
+			{
+				Debug.Log("tree" + tree);
+				tree.GetComponent<TreeSource>().TakeDamage(DamageValue);
+			}
+
+			StartCoroutine(DestroyWithDelay());
+		}
+        catch(Exception ex)
         {
 
-			TreeManager.instance.RemoveTree(tr.gameObject);
-
-			//if (tr.GetComponent<TreeSource>().Health > 0)
-   //         {
-   //             tr.GetComponent<TreeSource>().TakeDamage(5f);
-   //         }
         }
-
-		StartCoroutine(DestroyWithDelay());
+		
 	}
 
 	private IEnumerator DestroyWithDelay()

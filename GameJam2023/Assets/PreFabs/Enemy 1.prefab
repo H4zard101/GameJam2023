@@ -113,6 +113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89dbe3cf2b4c96947a6ac505b16d2db6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sourceTreeEffectPoint: {fileID: 0}
+  damage: 20
 --- !u!114 &3680960168383422728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,8 +128,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  EffectPoint: {fileID: 0}
-  pariclessSystem: {fileID: 0}
+  EffectPoint: {fileID: 3017877774426682499}
+  pariclessSystem: {fileID: 7690084789245741680, guid: 23aecf015c6baa44e9645cc4b679fb9e, type: 3}
 --- !u!54 &8421209956387312070
 Rigidbody:
   m_ObjectHideFlags: 0

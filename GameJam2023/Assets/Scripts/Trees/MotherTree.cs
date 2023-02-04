@@ -22,6 +22,8 @@ public class MotherTree : MonoBehaviour
     {
         if (Health <= 0)
         {
+            TreeManager.instance.RemoveTree(gameObject);
+
             Destroy(this.gameObject);
             foreach (GameObject trees in sourceTreesUnderInfluence)
             {
@@ -30,10 +32,6 @@ public class MotherTree : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("Collided" + collision.gameObject.name);
-    }
     public void TakeDamage(float damage)
     {
         Health -= damage;

@@ -44,24 +44,28 @@ public class TreeSource : MonoBehaviour
     {
         if (Health <= 0)
         {
+            TreeManager.instance.RemoveTree(gameObject);
             Death();
         }
     }
 
     public void Upgrade()
     {
-        if (treeSourceLevel < 4)
+        if (turret_type != null)
         {
-            treeSourceLevel += 1;
-            GameObject new_turret = Instantiate(turret_type, positions[treeSourceLevel - 1], Quaternion.identity);
-            turretsUnderInfluence[treeSourceLevel - 1] = new_turret;
-            Health += HealthPerLevel;
+            if (treeSourceLevel < 4)
+            {
+                treeSourceLevel += 1;
+                GameObject new_turret = Instantiate(turret_type, positions[treeSourceLevel - 1], Quaternion.identity);
+                turretsUnderInfluence[treeSourceLevel - 1] = new_turret;
+                Health += HealthPerLevel;
+            }
         }
     }
     public void TakeDamage(float damage)
     {
         Health -= damage;
-        Instantiate(pariclessSystem, EffectPoint.position, EffectPoint.rotation);
+        Instantiate(pariclessSystem, EffectPoint.position, EffectPoint.rotation);       
     }
 
     void Death()
