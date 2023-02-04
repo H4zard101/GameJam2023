@@ -10,10 +10,6 @@ public class Enemy : MonoBehaviour
     public Transform EffectPoint;
     public GameObject pariclessSystem;
 
-    private void Start()
-    {
-        EffectPoint.GetComponent<ParticleSystem>().Stop();
-    }
     public void TakeDamage(float damage)
     {
         health = health - damage;

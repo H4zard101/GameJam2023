@@ -41,11 +41,7 @@ public class TreeSource : MonoBehaviour
     {
         if (Health <= 0)
         {
-            Destroy(this.gameObject);
-            foreach(GameObject turret in turretsUnderInfluence)
-            {
-                Destroy(turret);
-            }
+            Death();
         }
     }
 
@@ -57,6 +53,15 @@ public class TreeSource : MonoBehaviour
             GameObject new_turret = Instantiate(turret_type, positions[treeSourceLevel - 1], Quaternion.identity);
             turretsUnderInfluence[treeSourceLevel - 1] = new_turret;
             Health += HealthPerLevel;
+        }
+    }
+
+    void Death()
+    {
+        Destroy(this.gameObject);
+        foreach (GameObject turret in turretsUnderInfluence)
+        {
+            Destroy(turret);
         }
     }
 }
