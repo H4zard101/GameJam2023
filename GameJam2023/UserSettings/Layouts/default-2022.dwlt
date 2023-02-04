@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2560
     height: 1357.3334
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Project
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,11 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
+<<<<<<< HEAD
   controlID: 126
+=======
+  controlID: 121
+>>>>>>> 092971686d5999b5e507cc6b3fc8c19856bc8673
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -416,22 +420,36 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
+<<<<<<< HEAD
     - Assets/Scripts
+=======
+    - Assets/Inventory
+>>>>>>> 092971686d5999b5e507cc6b3fc8c19856bc8673
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
+<<<<<<< HEAD
   - Assets/Scripts
+=======
+  - Assets/Inventory
+>>>>>>> 092971686d5999b5e507cc6b3fc8c19856bc8673
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\GameJam2023\GameJam2023
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
     m_SelectedIDs: 0c5c0000
     m_LastClickedID: 23564
     m_ExpandedIDs: 00000000ca5b0000fc5b00000c5c000000ca9a3bffffff7f
+=======
+    m_SelectedIDs: b25c0000
+    m_LastClickedID: 23730
+    m_ExpandedIDs: 00000000785c0000c25c000000ca9a3bffffff7f
+>>>>>>> 092971686d5999b5e507cc6b3fc8c19856bc8673
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -459,7 +477,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000ca5b0000
+=======
+    m_ExpandedIDs: 00000000785c0000
+>>>>>>> 092971686d5999b5e507cc6b3fc8c19856bc8673
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -587,9 +609,15 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
       m_SelectedIDs: 
       m_LastClickedID: 0
       m_ExpandedIDs: b2e5fdff30fbffff
+=======
+      m_SelectedIDs: 02090000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 6af3ffff98f8fffff0f8ffff30fbffff
+>>>>>>> 092971686d5999b5e507cc6b3fc8c19856bc8673
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 

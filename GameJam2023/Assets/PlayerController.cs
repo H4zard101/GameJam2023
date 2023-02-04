@@ -6,15 +6,13 @@ public class PlayerController : MonoBehaviour
 {
     private Inventory inventory = new();
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    public int SeedAmount;
+    public int WaterAmount;
 
-    }
 
-    // Update is called once per frame
-    void Update()
+    public void Start()
     {
         
     }
+
 }
