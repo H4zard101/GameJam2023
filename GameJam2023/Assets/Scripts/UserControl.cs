@@ -65,7 +65,7 @@ public class UserControl : MonoBehaviour
             case State.MoveUnit:
                 if (Input.GetMouseButtonUp(0))
                 {
-                    MoveUnit();
+                    PlaceUnit();
                 }
                 break;
         }
@@ -87,7 +87,7 @@ public class UserControl : MonoBehaviour
         {
             var unit = Gameboard.Instance.GetUnit(clickedCell);
             
-            if (unit != null && unit.Side == Gameboard.Instance.CurrentTeam)
+            if (unit != null && unit.prefab.name == "Cube(Clone)" || unit.prefab.name == "Cube")
                 m_SelectedUnit = unit;
             else
                 m_SelectedUnit = null;
@@ -131,7 +131,7 @@ public class UserControl : MonoBehaviour
         }
     }
 
-    void MoveUnit()
+    void PlaceUnit()
     {
         //We use the Raycast function of the Gameboard which will output in clickedCell which cell was clicked. 
         if (Gameboard.Instance.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition),
@@ -143,25 +143,14 @@ public class UserControl : MonoBehaviour
             {
                 var unit = Gameboard.Instance.GetUnit(clickedCell);
 
-                //only if there is no unit on the target cell do we move there
-                /*if (unit == null)
-                {
-                    MoveCommand cmd = new MoveCommand(m_SelectedUnit.CurrentCell, clickedCell);
-                    CommandManager.Instance.AddCommand(cmd);
-                }
-  */
+               
                 if(unit == null)
                 {
                     PlaceTurretCommand cmd = new PlaceTurretCommand(clickedCell);
                     CommandManager.Instance.AddCommand(cmd);
                 }
 
-               /* else if (unit.Side != m_SelectedUnit.Side)
-                {
-                    CaptureCommand command = new CaptureCommand(m_SelectedUnit.CurrentCell, clickedCell);
-                    CommandManager.Instance.AddCommand(command);
-                }    
-                */  
+               
             }
         }
 

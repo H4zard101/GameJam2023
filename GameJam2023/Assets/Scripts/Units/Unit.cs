@@ -2,14 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+ 
 public abstract class Unit : MonoBehaviour
 {
-    public GameObject prefab;
-    public enum Team
+
+   [SerializeField] public enum TurretType
     {
-        White,
-        Black
+        BaseTree,
+        Turret1,
+        Turret2
     }
+    public GameObject prefab;
+    
+    public GameObject[] turrets;
     
     public Vector3Int CurrentCell
     {
@@ -17,7 +22,7 @@ public abstract class Unit : MonoBehaviour
         set => m_CurrentCell = value;
     }
 
-    public Team Side;
+    
     
     protected Vector3Int m_CurrentCell;
     

@@ -16,7 +16,7 @@ public class Gameboard : MonoBehaviour
 
     public Grid Grid => m_Grid;
     public AnimationSystem AnimationSystem => m_AnimSystem;
-    public Unit.Team CurrentTeam => m_CurrentTeam;
+    
     
     private Unit[,] m_Content;
 
@@ -25,7 +25,7 @@ public class Gameboard : MonoBehaviour
 
     private Plane m_Plane;
     
-    private Unit.Team m_CurrentTeam = Unit.Team.Black;
+    
 
 
     // Start is called before the first frame update
@@ -137,19 +137,8 @@ public class Gameboard : MonoBehaviour
         Instantiate(U.prefab, locationToPlace, Quaternion.identity);
     }
 
-    public void SwitchTeam()
-    {
-        m_CurrentTeam = m_CurrentTeam == Unit.Team.Black ? Unit.Team.White : Unit.Team.Black;
-        UpdateTurnIndicator();
-    }
 
-    public void TakeOutUnit(Unit u)
-    {
-        u.CurrentCell = new Vector3Int(-1,-1, -1);
-        Gameboard.Instance.AnimationSystem.NewAnim(u.transform,
-            u.Side == Unit.Team.Black ? new Vector3(-1.0f, 0.0f, 5.0f) : new Vector3(11.0f, 0.0f, 5.0f),
-            10.0f);
-    }
+  
 
     void UpdateTurnIndicator()
     {
