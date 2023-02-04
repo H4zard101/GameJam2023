@@ -7,7 +7,14 @@ public class Bullet : MonoBehaviour
     private Transform target;
     public float Speed = 20.0f;
 
+    public enum AmmoType
+    {
+        The_Irish_Favorite,
+        Eggcorn,
+        PineCone
+    };
 
+    public AmmoType ammoType;
     public void Seek(Transform _target)
     {
         target = _target;
@@ -30,12 +37,10 @@ public class Bullet : MonoBehaviour
         }
         transform.Translate(direction.normalized * distanceThisFrame, Space.World);
     }
-
     void HitTarget()
     {
-        Debug.Log("We Hit somthing");
         Destroy(gameObject);
-        Destroy(target.gameObject);
+        //Destroy(target.gameObject);
         return;
     }
 }

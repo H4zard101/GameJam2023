@@ -13,10 +13,23 @@ public class TurretLockOn : MonoBehaviour
 
     public float fireRate = 1f;
     private float fireCountdown = 0f;
+
+    public enum TurretType
+    {
+        StandardTurret,
+        SniperTurret,
+        RapidFireTurret
+
+    };
+    public TurretType turretType;
+
+
     private void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
+
+
     void UpdateTarget()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -52,7 +65,7 @@ public class TurretLockOn : MonoBehaviour
         Vector3 rotation = lookRotation.eulerAngles;
 
         // For some reason the X has to be - overwise the barrel poits up side down 
-        rotationPart.rotation = Quaternion.Euler(-rotation.x, rotation.y, 0f);
+        rotationPart.rotation = Quaternion.Euler(rotation.x, rotation.y, 0f);
 
 
         if(fireCountdown <= 0f)
@@ -66,7 +79,6 @@ public class TurretLockOn : MonoBehaviour
 
     public void Shoot()
     {
-        Debug.Log("Shoot");
         GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletGO.GetComponent<Bullet>();
 
