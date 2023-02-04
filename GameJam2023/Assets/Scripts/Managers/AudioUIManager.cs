@@ -8,6 +8,8 @@ public enum AudioSliders {master, music, sfx, ui}
 
 public class AudioUIManager : MonoBehaviour
 {
+    public static AudioUIManager Instance => m_Instance;
+    private static AudioUIManager m_Instance;
     //Reference to the panel containing all the audio settings UI
     [SerializeField] private GameObject audioPanel;
 
@@ -29,6 +31,7 @@ public class AudioUIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        m_Instance = this;
         //Listeners for buttons (to currently just hide pop up)
         popExitButton.onClick.AddListener(delegate {HidePopUp(); });
 
@@ -40,6 +43,11 @@ public class AudioUIManager : MonoBehaviour
          
     }
     
+    public void OpenPopUp()
+    {
+        audioPanel.SetActive(true);
+    }
+
     private void HidePopUp()
     {
         audioPanel.SetActive(false);      

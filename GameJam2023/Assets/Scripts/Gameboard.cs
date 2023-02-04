@@ -24,7 +24,10 @@ public class Gameboard : MonoBehaviour
     private AnimationSystem m_AnimSystem;
 
     private Plane m_Plane;
-    
+
+    public Invenetory20 invenetory;
+
+    public int cost = 5;
     
 
 
@@ -37,6 +40,8 @@ public class Gameboard : MonoBehaviour
         m_AnimSystem = new AnimationSystem();
         
         m_Plane = new Plane(Vector3.up, Vector3.zero);
+        invenetory = FindObjectOfType<Invenetory20>();
+    
     }
 
     private void Start()
@@ -134,7 +139,11 @@ public class Gameboard : MonoBehaviour
 
     public void PlaceUnit(Unit U, Vector3Int locationToPlace)
     {
-        Instantiate(U.turrets[0], locationToPlace, Quaternion.identity);
+        if(invenetory.PlaceTree(cost))
+        {
+            Instantiate(U.turrets[0], locationToPlace, Quaternion.identity);
+        }
+
     }
 
 

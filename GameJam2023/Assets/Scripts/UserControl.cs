@@ -70,6 +70,11 @@ public class UserControl : MonoBehaviour
                 }
                 break;
         }
+
+        if(Input.GetKeyDown("escape"))
+        {
+            AudioUIManager.Instance.OpenPopUp();
+        }
     }
 
     void DeselectUnit()

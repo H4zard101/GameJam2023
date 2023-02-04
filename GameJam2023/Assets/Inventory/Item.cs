@@ -11,5 +11,8 @@ public class Item
     }
 
     public ItemType itemType;
+
     public int amount;
+    public int SeedAmount = 10;
+    public int WaterAmount = 10;
 }
