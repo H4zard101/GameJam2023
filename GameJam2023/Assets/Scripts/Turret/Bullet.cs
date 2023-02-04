@@ -42,6 +42,7 @@ public class Bullet : MonoBehaviour
     {
         Destroy(gameObject);
         target.GetComponent<Enemy>().TakeDamage(damage);
+        AudioPlayback.PlayOneShot(AudioManager.Instance.references.enemyHitEvent, null);//One shot enemy hit
         return;
     }
 }

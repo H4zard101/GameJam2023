@@ -21,7 +21,8 @@ public class Enemy : MonoBehaviour
 
     public void Death()
     {
-        Instantiate(pariclessSystem, EffectPoint.position, EffectPoint.rotation);     
+        Instantiate(pariclessSystem, EffectPoint.position, EffectPoint.rotation);   
+        AudioPlayback.PlayOneShot(AudioManager.Instance.references.enemyDeathEvent, null);//Enemy death oneshot  
         Destroy(gameObject);
         
     }

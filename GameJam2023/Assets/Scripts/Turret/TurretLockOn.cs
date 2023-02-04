@@ -81,7 +81,7 @@ public class TurretLockOn : MonoBehaviour
     {
         GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletGO.GetComponent<Bullet>();
-
+        AudioPlayback.PlayOneShot(AudioManager.Instance.references.turretShootEvent, null);//One Shot turret fire
         if(bullet != null)
         {
             bullet.Seek(target);
