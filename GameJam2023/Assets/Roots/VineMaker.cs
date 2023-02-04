@@ -2,6 +2,7 @@ using UnityEngine;
 using System;
 using System.Runtime.ExceptionServices;
 using Unity.VisualScripting;
+using static UnityEditor.PlayerSettings;
 
 public class VineMaker : MonoBehaviour
 {
@@ -11,19 +12,24 @@ public class VineMaker : MonoBehaviour
     public float rand_box_size = 3f;
     public int num_vines = 3;
     public int SEGMENT_COUNT = 50;
+    public bool scale = true;
 
     // Update is called once per frame
     void Start()
     {
         Vector3 last_pos;
+        float dist_to_start = 0f;
+        float max_dist = 0f;
 
         for (int k = 0; k < ends.Length; k++)
         {
-            last_pos = start.transform.position;
+            max_dist = Vector3.Distance(start.transform.position, ends[k].transform.position);
+
             for (int i = 0; i < num_vines; i++)
             {
                 Vector3 p1 = GetRandomVector3(start.transform.position, (start.transform.position + ends[k].transform.position) / 2);
                 Vector3 p2 = GetRandomVector3((start.transform.position + ends[k].transform.position) / 2, ends[k].transform.position);
+                last_pos = start.transform.position;
 
                 for (int j = 1; j <= SEGMENT_COUNT; j++)
                 {
@@ -31,6 +37,14 @@ public class VineMaker : MonoBehaviour
 
                     Vector3 pos = CalculateCubicBezierPoint(t, start.transform.position, p1, p2, ends[k].transform.position);
 
+                    if (scale)
+                    {
+                        dist_to_start = Vector3.Distance(start.transform.position, pos);
+                        Vector3 newScale = new Vector3(1, 1, 1);
+                        newScale.x = newScale.z = (1.4f - 1.2f * dist_to_start / max_dist);
+                        newScale.y = Mathf.Max((0.2f * dist_to_start / max_dist), 0.4f);
+                        segment.transform.localScale = newScale;
+                    }
                     Instantiate(segment, pos, Quaternion.FromToRotation(Vector3.up, pos - last_pos));
 
                     last_pos = pos;
