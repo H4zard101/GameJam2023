@@ -5,8 +5,14 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float health = 100;
-    
 
+
+    public Transform EffectPoint;
+
+    private void Start()
+    {
+        EffectPoint.GetComponent<ParticleSystem>().Stop();
+    }
     public void TakeDamage(float damage)
     {
         health = health - damage;
@@ -20,5 +26,6 @@ public class Enemy : MonoBehaviour
     public void Death()
     {
         Destroy(gameObject);
+        EffectPoint.GetComponent<ParticleSystem>().Play();
     }
 }
