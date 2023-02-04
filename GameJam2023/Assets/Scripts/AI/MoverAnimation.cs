@@ -54,7 +54,7 @@ public class MoverAnimation : MonoBehaviour
 			if (tree != null)
 			{
 				Debug.Log("tree" + tree);
-				tree.GetComponent<TreeSource>().TakeDamage(DamageValue);
+				tree.GetComponent<GameTrees>().TakeDamage(DamageValue);
 			}
 
 			StartCoroutine(DestroyWithDelay());

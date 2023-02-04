@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TreeSource : MonoBehaviour
+public class TreeSource : GameTrees
 {
     public GameObject SourceTree;
     public GameObject turret_type;
@@ -62,7 +62,7 @@ public class TreeSource : MonoBehaviour
             }
         }
     }
-    public void TakeDamage(float damage)
+    public override void TakeDamage(float damage)
     {
         Health -= damage;
         Instantiate(pariclessSystem, EffectPoint.position, EffectPoint.rotation);       

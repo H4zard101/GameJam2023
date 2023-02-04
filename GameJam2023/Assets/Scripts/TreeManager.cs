@@ -33,6 +33,8 @@ public class TreeManager : MonoBehaviour
         allTrees = new List<GameObject>(trees);
 
         motherTree = GameObject.FindGameObjectWithTag("MotherTree");
+
+        allTrees.Add(motherTree);
     }
 
     public void RemoveTree(GameObject tree)
