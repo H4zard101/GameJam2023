@@ -369,6 +369,8 @@ MonoBehaviour:
   Width: 20
   Height: 20
   TurnIndicatorText: {fileID: 0}
+  invenetory: {fileID: 0}
+  cost: 5
 --- !u!156049354 &644374018
 Grid:
   m_ObjectHideFlags: 0
@@ -406,6 +408,8 @@ GameObject:
   m_Component:
   - component: {fileID: 699508710}
   - component: {fileID: 699508709}
+  - component: {fileID: 699508712}
+  - component: {fileID: 699508711}
   m_Layer: 0
   m_Name: Contoller
   m_TagString: Untagged
@@ -443,6 +447,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &699508711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699508708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbdcb877fc02465459b5a5705dc9ca68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WaterAmount: 10
+  SeedAmount: 10
+  TreeCanBePlaced: 1
+  TurretUpgradeCanBe: 1
+  _Time: 10
+  maxTime: 10
+--- !u!114 &699508712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699508708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d999750f48e0994b98c58335873a23e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SeedAmount: 0
+  WaterAmount: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

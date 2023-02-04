@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MotherTree : MonoBehaviour
+public class MotherTree : GameTrees
 {
     public GameObject Mother_Tree;
     public GameObject[] sourceTreesUnderInfluence;
@@ -20,9 +20,10 @@ public class MotherTree : MonoBehaviour
     }
     private void Update()
     {
-
         if (Health <= 0)
         {
+            TreeManager.instance.RemoveTree(gameObject);
+
             Destroy(this.gameObject);
             foreach (GameObject trees in sourceTreesUnderInfluence)
             {
@@ -31,8 +32,7 @@ public class MotherTree : MonoBehaviour
         }
     }
 
-
-    public void TakeDamage(float damage)
+    public override void TakeDamage(float damage)
     {
         Health -= damage;
         Instantiate(pariclessSystem, EffectPoint.position, EffectPoint.rotation);
