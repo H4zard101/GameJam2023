@@ -236,6 +236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 215445897}
   - component: {fileID: 215445896}
+  - component: {fileID: 215445898}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -273,6 +274,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &215445898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215445895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbdcb877fc02465459b5a5705dc9ca68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WaterAmount: 10
+  SeedAmount: 10
+  TreeCanBePlaced: 1
+  TurretUpgradeCanBe: 1
+  _Time: 10
+  maxTime: 10
 --- !u!1001 &281271388
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1008,6 +1027,8 @@ MonoBehaviour:
   Width: 8
   Height: 8
   TurnIndicatorText: {fileID: 0}
+  invenetory: {fileID: 0}
+  cost: 5
 --- !u!224 &905805882 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 168788387933072660, guid: 5311c34c6f3d0ab4c88c75705c4b2876, type: 3}
