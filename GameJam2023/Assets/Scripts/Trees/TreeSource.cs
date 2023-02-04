@@ -13,6 +13,9 @@ public class TreeSource : MonoBehaviour
     public float gridSize = 3f;
     private Vector3[] positions = new Vector3[4];
 
+    public Transform EffectPoint;
+    public GameObject pariclessSystem;
+
     private void Start()
     {
         positions[0] = transform.position;
@@ -41,11 +44,7 @@ public class TreeSource : MonoBehaviour
     {
         if (Health <= 0)
         {
-            Destroy(this.gameObject);
-            foreach(GameObject turret in turretsUnderInfluence)
-            {
-                Destroy(turret);
-            }
+            Death();
         }
     }
 
@@ -57,6 +56,20 @@ public class TreeSource : MonoBehaviour
             GameObject new_turret = Instantiate(turret_type, positions[treeSourceLevel - 1], Quaternion.identity);
             turretsUnderInfluence[treeSourceLevel - 1] = new_turret;
             Health += HealthPerLevel;
+        }
+    }
+    public void TakeDamage(float damage)
+    {
+        Health -= damage;
+        Instantiate(pariclessSystem, EffectPoint.position, EffectPoint.rotation);
+    }
+
+    void Death()
+    {
+        Destroy(this.gameObject);
+        foreach (GameObject turret in turretsUnderInfluence)
+        {
+            Destroy(turret);
         }
     }
 }

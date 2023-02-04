@@ -10,13 +10,17 @@ public class MotherTree : MonoBehaviour
     public int motherTreeLevel = 1;
     public float Health = 400;
 
+    public Transform EffectPoint;
+    public GameObject pariclessSystem;
     public void Awake()
     {
         Mother_Tree = this.gameObject;
         sourceTreesUnderInfluence = new GameObject[maximumNuberOfSourceTrees];
+    
     }
     private void Update()
     {
+
         if (Health <= 0)
         {
             Destroy(this.gameObject);
@@ -25,5 +29,12 @@ public class MotherTree : MonoBehaviour
                 Destroy(trees);
             }
         }
+    }
+
+
+    public void TakeDamage(float damage)
+    {
+        Health -= damage;
+        Instantiate(pariclessSystem, EffectPoint.position, EffectPoint.rotation);
     }
 }

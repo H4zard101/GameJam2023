@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     public float health = 100;
 
     public Transform EffectPoint;
-
+    public GameObject pariclessSystem;
     private Animator animationController;
 
     private void Start()
@@ -26,14 +26,14 @@ public class Enemy : MonoBehaviour
         health = health - damage;
         if (health <= 0)
         {
-            Debug.Log("Enemy Dead");
             Death();
         }
     }
 
     public void Death()
     {
+        Instantiate(pariclessSystem, EffectPoint.position, EffectPoint.rotation);     
         Destroy(gameObject);
-        EffectPoint.GetComponent<ParticleSystem>().Play();
+        
     }
 }

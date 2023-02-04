@@ -9,9 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4896071468673462861}
+  - component: {fileID: 1255811376}
+  - component: {fileID: 4247626971737185960}
   m_Layer: 0
   m_Name: TreeTurret
-  m_TagString: Untagged
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,8 +31,76 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4933955566422635628}
+  - {fileID: 4195564460824339484}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1255811376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4896071468673462863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2958055a2cff99d449d60c859b98b770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SourceTree: {fileID: 0}
+  turret_type: {fileID: 1251524153594167866, guid: 1f44d62b5a1b5bb44bc7c433a586ec01, type: 3}
+  turretsUnderInfluence:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  Health: 100
+  HealthPerLevel: 50
+  gridSize: 3
+  sourceTreeEffectPoint: {fileID: 0}
+  IsDamaged: 0
+--- !u!65 &4247626971737185960
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4896071468673462863}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 5, z: 2}
+  m_Center: {x: 0.3, y: 0, z: 0.3}
+--- !u!1 &8757270707939435048
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4195564460824339484}
+  m_Layer: 0
+  m_Name: EffectPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4195564460824339484
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8757270707939435048}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0.44108665, y: -1.7802578, z: 0.38004994}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4896071468673462861}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4896071467723379591
 PrefabInstance:

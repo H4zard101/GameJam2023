@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class UserControl : MonoBehaviour
 {
+    public Camera cam;
     enum State
     {
         SelectingUnit,
@@ -55,7 +56,7 @@ public class UserControl : MonoBehaviour
         
         switch (m_CurrentState)
         {
-            case State.SelectingUnit:
+           case State.SelectingUnit:
                 if (Input.GetMouseButtonUp(0))
                 {
                     CheckUnitToSelect();
@@ -82,18 +83,22 @@ public class UserControl : MonoBehaviour
 
     void CheckUnitToSelect()
     {
-        if (Gameboard.Instance.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition),
+        if (Gameboard.Instance.Raycast(cam.ScreenPointToRay(Input.mousePosition),
             out Vector3Int clickedCell))
         {
             var unit = Gameboard.Instance.GetUnit(clickedCell);
             
-            if (unit != null && unit.prefab.name == "MainTree" )
+            if (unit != null && unit.prefab.name == "BaseTree" || unit.prefab.name == "BaseTree(Clone)")
+            {
                 m_SelectedUnit = unit;
+            }
+                
             else
                 m_SelectedUnit = null;
         }
         else
         {
+            
             m_SelectedUnit = null;
         }
         
@@ -134,7 +139,7 @@ public class UserControl : MonoBehaviour
     void PlaceUnit()
     {
         //We use the Raycast function of the Gameboard which will output in clickedCell which cell was clicked. 
-        if (Gameboard.Instance.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition),
+        if (Gameboard.Instance.Raycast(cam.ScreenPointToRay(Input.mousePosition),
             out Vector3Int clickedCell))
         {
             //m_MovableCells contains all the cells our currently selected unit can move to.
