@@ -31,6 +31,7 @@ namespace Pathfinding {
 			// FindObjectsOfType does not support interfaces unfortunately.
 			ais = FindObjectsOfType<MonoBehaviour>().OfType<IAstarAI>().ToArray();
 			useGUILayout = false;
+			target = GameObject.FindGameObjectWithTag("Target").transform;
 		}
 
 		public void OnGUI () {

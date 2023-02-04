@@ -4,14 +4,22 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float health = 100;
+    public EnemyType enemyType;
 
+    public float health = 100;
 
     public Transform EffectPoint;
 
+    private Animator animationController;
+
     private void Start()
     {
-        EffectPoint.GetComponent<ParticleSystem>().Stop();
+        if(EffectPoint!=null)
+            EffectPoint.GetComponent<ParticleSystem>().Stop();
+
+        animationController = GetComponent<Animator>();
+        animationController.SetTrigger("running");
+
     }
     public void TakeDamage(float damage)
     {
