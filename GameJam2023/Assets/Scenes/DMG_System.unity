@@ -141,7 +141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6635893851034982451, guid: a43f8664ceb2b4b4fa20a6986412a5b6, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6635893851034982451, guid: a43f8664ceb2b4b4fa20a6986412a5b6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -261,6 +261,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: e0ab7407c37ba434d9f521a2eb0a42a5, type: 3}
+--- !u!4 &432132759 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3017877774426682499, guid: 8d194b8744af3ca4fa483321f7f38bf3, type: 3}
+  m_PrefabInstance: {fileID: 2089627125116864786}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &597983125
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -852,6 +857,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3680960168383422728, guid: 8d194b8744af3ca4fa483321f7f38bf3, type: 3}
+      propertyPath: EffectPoint
+      value: 
+      objectReference: {fileID: 432132759}
+    - target: {fileID: 3680960168383422728, guid: 8d194b8744af3ca4fa483321f7f38bf3, type: 3}
+      propertyPath: pariclessSystem
+      value: 
+      objectReference: {fileID: 7690084789245741680, guid: 23aecf015c6baa44e9645cc4b679fb9e, type: 3}
     - target: {fileID: 3680960168383422735, guid: 8d194b8744af3ca4fa483321f7f38bf3, type: 3}
       propertyPath: m_RootOrder
       value: 3

@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
 
 
     public Transform EffectPoint;
+    public GameObject pariclessSystem;
 
     private void Start()
     {
@@ -25,7 +26,10 @@ public class Enemy : MonoBehaviour
 
     public void Death()
     {
+
+        Instantiate(pariclessSystem, EffectPoint.position, EffectPoint.rotation);
+        Debug.Log("particles");
         Destroy(gameObject);
-        EffectPoint.GetComponent<ParticleSystem>().Play();
+        
     }
 }
