@@ -5248,6 +5248,134 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1071955648
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1071955651}
+  - component: {fileID: 1071955650}
+  - component: {fileID: 1071955649}
+  m_Layer: 0
+  m_Name: MenuAudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1071955649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071955648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e18cc6e224a3dbf4e9f6b337a4d0e22a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turretShootEvent:
+    Guid:
+      Data1: 1943101679
+      Data2: 1234755391
+      Data3: -635916385
+      Data4: 1861124658
+    Path: event:/TurretShoot
+  enemyHitEvent:
+    Guid:
+      Data1: -1198902076
+      Data2: 1195972653
+      Data3: 1767529865
+      Data4: -199857461
+    Path: event:/EnemyHit
+  turretHitEvent:
+    Guid:
+      Data1: -1679399553
+      Data2: 1074052722
+      Data3: -1897334113
+      Data4: -1645760611
+    Path: event:/TurretHit
+  enemyDeathEvent:
+    Guid:
+      Data1: 1712985060
+      Data2: 1134428960
+      Data3: 999882930
+      Data4: -881882222
+    Path: event:/EnemyDeath
+  turretDeathEvent:
+    Guid:
+      Data1: 538292857
+      Data2: 1280054804
+      Data3: -193352514
+      Data4: -1568200539
+    Path: event:/TurretDeath
+  treeHitEvent:
+    Guid:
+      Data1: 383641426
+      Data2: 1110081363
+      Data3: 89376182
+      Data4: 625468562
+    Path: event:/TreeHit
+  treeDeathEvent:
+    Guid:
+      Data1: 331952706
+      Data2: 1106199335
+      Data3: -1370586961
+      Data4: -1269144956
+    Path: event:/TreeDeath
+  gameMusicEvent:
+    Guid:
+      Data1: -1139459853
+      Data2: 1330922384
+      Data3: 1644228765
+      Data4: -1473208592
+    Path: event:/GameMusic
+  menuMusicEvent:
+    Guid:
+      Data1: -793082560
+      Data2: 1189890291
+      Data3: 61419711
+      Data4: 2119757283
+    Path: event:/MenuMusic
+  ambienceEvent:
+    Guid:
+      Data1: -24927173
+      Data2: 1115743572
+      Data3: -849423221
+      Data4: 797473669
+    Path: event:/Ambience
+--- !u!114 &1071955650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071955648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e929518421ca274486150e946a13919, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  references: {fileID: 1071955649}
+--- !u!4 &1071955651
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071955648}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1434.8574, y: 349.84357, z: -5.427571}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1420915672
 GameObject:
   m_ObjectHideFlags: 0
