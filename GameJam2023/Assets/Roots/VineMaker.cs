@@ -15,8 +15,11 @@ public class VineMaker : MonoBehaviour
     // Update is called once per frame
     void Start()
     {
+        Vector3 last_pos;
+
         for (int k = 0; k < ends.Length; k++)
         {
+            last_pos = start.transform.position;
             for (int i = 0; i < num_vines; i++)
             {
                 Vector3 p1 = GetRandomVector3(start.transform.position, (start.transform.position + ends[k].transform.position) / 2);
@@ -28,7 +31,9 @@ public class VineMaker : MonoBehaviour
 
                     Vector3 pos = CalculateCubicBezierPoint(t, start.transform.position, p1, p2, ends[k].transform.position);
 
-                    Instantiate(segment, pos, Quaternion.identity);
+                    Instantiate(segment, pos, Quaternion.FromToRotation(Vector3.up, pos - last_pos));
+
+                    last_pos = pos;
                 }
             }
         }
