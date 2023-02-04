@@ -430,6 +430,27 @@ MonoBehaviour:
       Data3: -1370586961
       Data4: -1269144956
     Path: event:/TreeDeath
+  gameMusicEvent:
+    Guid:
+      Data1: -1139459853
+      Data2: 1330922384
+      Data3: 1644228765
+      Data4: -1473208592
+    Path: event:/GameMusic
+  menuMusicEvent:
+    Guid:
+      Data1: -793082560
+      Data2: 1189890291
+      Data3: 61419711
+      Data4: 2119757283
+    Path: event:/MenuMusic
+  ambienceEvent:
+    Guid:
+      Data1: -24927173
+      Data2: 1115743572
+      Data3: -849423221
+      Data4: 797473669
+    Path: event:/Ambience
 --- !u!114 &389970551
 MonoBehaviour:
   m_ObjectHideFlags: 0

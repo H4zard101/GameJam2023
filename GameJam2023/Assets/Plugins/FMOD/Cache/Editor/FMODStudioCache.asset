@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &11400000
+--- !u!114 &-6566424138620366748
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,21 +9,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/TurretDeath
   m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: 59222271814105422}
-  - {fileID: 841726890423420295}
-  EditorEvents: []
-  EditorParameters: []
-  MasterBanks:
-  - {fileID: 841726890423420295}
-  StringsBanks:
-  - {fileID: 59222271814105422}
-  cacheTime: 638111207951283432
-  cacheVersion: 131601
---- !u!114 &59222271814105422
+  Path: event:/TurretDeath
+  Guid:
+    Data1: 538292857
+    Data2: 1280054804
+    Data3: -193352514
+    Data4: -1568200539
+  Banks:
+  - {fileID: -726728400578374423}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4873056643976685593
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -38,12 +42,92 @@ MonoBehaviour:
   Path: FMODBanks/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638111207951283432
+  lastModified: 638111486824018520
   FileSizes:
   - Name: 
-    Value: 712
+    Value: 1426
   Exists: 1
---- !u!114 &841726890423420295
+--- !u!114 &-4568983758714112922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/GameMusic/PlayerDead
+  m_EditorClassIdentifier: 
+  Name: PlayerDead
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2183159088
+    data2: 2427091067
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - PlayerAlive
+  - PlayerDead
+  Exists: 1
+--- !u!114 &-3478506180275455080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/TurretShoot
+  m_EditorClassIdentifier: 
+  Path: event:/TurretShoot
+  Guid:
+    Data1: 1943101679
+    Data2: 1234755391
+    Data3: -635916385
+    Data4: 1861124658
+  Banks:
+  - {fileID: -726728400578374423}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &-1381090657078210446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MenuMusic
+  m_EditorClassIdentifier: 
+  Path: event:/MenuMusic
+  Guid:
+    Data1: -793082560
+    Data2: 1189890291
+    Data3: 61419711
+    Data4: 2119757283
+  Banks:
+  - {fileID: -726728400578374423}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 106404
+--- !u!114 &-726728400578374423
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -58,6 +142,254 @@ MonoBehaviour:
   Path: FMODBanks/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638111207951283432
+  lastModified: 638111486823998591
   FileSizes: []
+  Exists: 1
+--- !u!114 &-213924622701883303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/TreeHit
+  m_EditorClassIdentifier: 
+  Path: event:/TreeHit
+  Guid:
+    Data1: 383641426
+    Data2: 1110081363
+    Data3: 89376182
+    Data4: 625468562
+  Banks:
+  - {fileID: -726728400578374423}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &-177675439896475513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/GameMusic
+  m_EditorClassIdentifier: 
+  Path: event:/GameMusic
+  Guid:
+    Data1: -1139459853
+    Data2: 1330922384
+    Data3: 1644228765
+    Data4: -1473208592
+  Banks:
+  - {fileID: -726728400578374423}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -4568983758714112922}
+  - {fileID: 9215994593792577193}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 116937
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: -4873056643976685593}
+  - {fileID: -726728400578374423}
+  EditorEvents:
+  - {fileID: 1204748428232727785}
+  - {fileID: -1381090657078210446}
+  - {fileID: 35389423252389652}
+  - {fileID: -213924622701883303}
+  - {fileID: -6566424138620366748}
+  - {fileID: 2712178863950807292}
+  - {fileID: 3649019263248642519}
+  - {fileID: 7883663584703686613}
+  - {fileID: -3478506180275455080}
+  - {fileID: -177675439896475513}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: -726728400578374423}
+  StringsBanks:
+  - {fileID: -4873056643976685593}
+  cacheTime: 638111486824018520
+  cacheVersion: 131601
+--- !u!114 &35389423252389652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/TreeDeath
+  m_EditorClassIdentifier: 
+  Path: event:/TreeDeath
+  Guid:
+    Data1: 331952706
+    Data2: 1106199335
+    Data3: -1370586961
+    Data4: -1269144956
+  Banks:
+  - {fileID: -726728400578374423}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2500
+--- !u!114 &1204748428232727785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience
+  Guid:
+    Data1: -24927173
+    Data2: 1115743572
+    Data3: -849423221
+    Data4: 797473669
+  Banks:
+  - {fileID: -726728400578374423}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 123345
+--- !u!114 &2712178863950807292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/TurretHit
+  m_EditorClassIdentifier: 
+  Path: event:/TurretHit
+  Guid:
+    Data1: -1679399553
+    Data2: 1074052722
+    Data3: -1897334113
+    Data4: -1645760611
+  Banks:
+  - {fileID: -726728400578374423}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2500
+--- !u!114 &3649019263248642519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/EnemyHit
+  m_EditorClassIdentifier: 
+  Path: event:/EnemyHit
+  Guid:
+    Data1: -1198902076
+    Data2: 1195972653
+    Data3: 1767529865
+    Data4: -199857461
+  Banks:
+  - {fileID: -726728400578374423}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 500
+--- !u!114 &7883663584703686613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/EnemyDeath
+  m_EditorClassIdentifier: 
+  Path: event:/EnemyDeath
+  Guid:
+    Data1: 1712985060
+    Data2: 1134428960
+    Data3: 999882930
+    Data4: -881882222
+  Banks:
+  - {fileID: -726728400578374423}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3500
+--- !u!114 &9215994593792577193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/GameMusic/TreeCount
+  m_EditorClassIdentifier: 
+  Name: TreeCount
+  StudioPath: 
+  Min: 0
+  Max: 10
+  Default: 0
+  ID:
+    data1: 3254180643
+    data2: 3521781786
+  Type: 1
+  IsGlobal: 0
+  Labels: []
   Exists: 1
