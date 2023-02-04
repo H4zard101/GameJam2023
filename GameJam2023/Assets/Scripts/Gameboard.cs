@@ -134,7 +134,7 @@ public class Gameboard : MonoBehaviour
 
     public void PlaceUnit(Unit U, Vector3Int locationToPlace)
     {
-        Instantiate(U.prefab, locationToPlace, Quaternion.identity);
+        Instantiate(U.turrets[0], locationToPlace, Quaternion.identity);
     }
 
 

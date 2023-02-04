@@ -87,7 +87,7 @@ public class UserControl : MonoBehaviour
         {
             var unit = Gameboard.Instance.GetUnit(clickedCell);
             
-            if (unit != null && unit.prefab.name == "Cube(Clone)" || unit.prefab.name == "Cube")
+            if (unit != null && unit.prefab.name == "MainTree" )
                 m_SelectedUnit = unit;
             else
                 m_SelectedUnit = null;

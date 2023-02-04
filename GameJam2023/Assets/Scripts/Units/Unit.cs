@@ -12,10 +12,12 @@ public abstract class Unit : MonoBehaviour
         Turret1,
         Turret2
     }
+
+    public TurretType turretType;
     public GameObject prefab;
     
     public GameObject[] turrets;
-    
+
     public Vector3Int CurrentCell
     {
         get => m_CurrentCell;
