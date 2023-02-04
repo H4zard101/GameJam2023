@@ -44,6 +44,24 @@ public class MoverAnimation : MonoBehaviour
 			GameObject.Instantiate(endOfPathEffect, tr.position, tr.rotation);
 			lastTarget = tr.position;
 		}
+
+        if (tr != null)
+        {
+
+			TreeManager.instance.RemoveTree(tr.gameObject);
+
+			//if (tr.GetComponent<TreeSource>().Health > 0)
+   //         {
+   //             tr.GetComponent<TreeSource>().TakeDamage(5f);
+   //         }
+        }
+
+		StartCoroutine(DestroyWithDelay());
+	}
+
+	private IEnumerator DestroyWithDelay()
+    {
+		yield return new WaitForSeconds(0.1f);
 		Destroy(gameObject);
 	}
 

@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 1257581292}
   m_Layer: 0
   m_Name: MainTree
-  m_TagString: MotherTree
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64,7 +64,7 @@ Transform:
   - {fileID: 4412311643613385526}
   - {fileID: 7718551673124923473}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1257581294
 BoxCollider:
@@ -95,9 +95,9 @@ MonoBehaviour:
   sourceTreesUnderInfluence: []
   maximumNuberOfSourceTrees: 2
   motherTreeLevel: 1
-  Health: 400
-  EffectPoint: {fileID: 0}
-  pariclessSystem: {fileID: 0}
+  Health: 10
+  EffectPoint: {fileID: 7718551673124923473}
+  pariclessSystem: {fileID: 4284172715656753862, guid: d3e5e9a75f1652b49bcfe72339ebd302, type: 3}
 --- !u!1001 &4229187305708467421
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -155,8 +155,12 @@ PrefabInstance:
       value: Tree_Mother
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8970e24f82ad35846835da92c4b59694, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8970e24f82ad35846835da92c4b59694, type: 3}
       propertyPath: m_TagString
-      value: Tree
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

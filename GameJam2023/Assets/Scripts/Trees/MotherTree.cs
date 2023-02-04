@@ -20,7 +20,6 @@ public class MotherTree : MonoBehaviour
     }
     private void Update()
     {
-
         if (Health <= 0)
         {
             Destroy(this.gameObject);
@@ -31,7 +30,10 @@ public class MotherTree : MonoBehaviour
         }
     }
 
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Collided" + collision.gameObject.name);
+    }
     public void TakeDamage(float damage)
     {
         Health -= damage;

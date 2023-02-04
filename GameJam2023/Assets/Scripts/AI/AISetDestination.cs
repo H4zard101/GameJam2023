@@ -2,21 +2,20 @@ using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class AISetDestination : MonoBehaviour
 {
 	public Transform target;
 	IAstarAI ai;
 
-    private GameObject[] allTrees;
+    
 
     private float timeSinceLastCheck = 0f;
     public float checkInternal = 3f;
 
     private void Start()
     {
-        allTrees = GameObject.FindGameObjectsWithTag("Target");
-
         FindClosestTree();
     }
     
@@ -26,17 +25,24 @@ public class AISetDestination : MonoBehaviour
         float closestDistance = float.MaxValue;
 
         // Loop through all GameObjects in the scene
-        foreach (GameObject gameObject in allTrees)
+        foreach (GameObject gameObject in TreeManager.instance.allTrees)
         {
-            // Calculate the distance from the target transform to the current GameObject
-            float distance = Vector3.Distance(transform.position, gameObject.transform.position);
-
-            // Check if the current GameObject is closer than the previous closest GameObject
-            if (distance < closestDistance)
+            if (gameObject != null)
             {
-                closestDistance = distance;
-                target = gameObject.transform;
+                // Calculate the distance from the target transform to the current GameObject
+                float distance = Vector3.Distance(transform.position, gameObject.transform.position);
+
+                // Check if the current GameObject is closer than the previous closest GameObject
+                if (distance < closestDistance)
+                {
+                    closestDistance = distance;
+                    target = gameObject.transform;
+                }
             }
+            else
+            {
+                continue;
+            }           
         }
 
         // Log the closest GameObject in the scene
