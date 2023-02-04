@@ -6,7 +6,8 @@ public class ClickObject : MonoBehaviour
 {
 
     private GameObject roots;
-    //roots VineSpreader = GetComponent<VineSpreader>();
+    public GameObject[] nearbyTrees;
+    private GameObject nearestTree;
 
     void Update()
     {
@@ -15,12 +16,29 @@ public class ClickObject : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
+            if (nearbyTrees == null)
+                nearbyTrees = GameObject.FindGameObjectsWithTag("Tree");
+
+
             if (Physics.Raycast(ray, out hit))
             {
-                // do something with hit.transform.gameObject
-                Debug.Log("Hit object: " + hit.transform.name);
 
                 hit.transform.gameObject.GetComponent<RootTree>().active = true;
+
+
+                //Find nearest tree in network to draw roots to
+                /*foreach (GameObject tree in nearbyTrees)
+                { 
+                    if tree.transfom.position - this.gameObject.transform.position 
+                    {
+                        if nearestTree != null
+                        {
+                          if tree.transfom.position - this.gameObject.transform.position
+                        }
+                    }
+                }
+                */
+
                 hit.transform.gameObject.GetComponent<TreeRoots>().start = this.gameObject;
                 hit.transform.gameObject.GetComponent<TreeRoots>().end = hit.transform.gameObject;
                 hit.transform.gameObject.GetComponent<TreeRoots>().Grow();
