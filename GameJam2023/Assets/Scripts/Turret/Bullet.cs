@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     private Transform target;
     public float Speed = 20.0f;
+    public float damage = 30.0f;
 
     public enum AmmoType
     {
@@ -40,7 +41,7 @@ public class Bullet : MonoBehaviour
     void HitTarget()
     {
         Destroy(gameObject);
-        //Destroy(target.gameObject);
+        target.GetComponent<Enemy>().TakeDamage(damage);
         return;
     }
 }
