@@ -13,6 +13,9 @@ public class TreeSource : MonoBehaviour
     public float gridSize = 3f;
     private Vector3[] positions = new Vector3[4];
 
+    public Transform EffectPoint;
+    public GameObject pariclessSystem;
+
     private void Start()
     {
         positions[0] = transform.position;
@@ -54,6 +57,11 @@ public class TreeSource : MonoBehaviour
             turretsUnderInfluence[treeSourceLevel - 1] = new_turret;
             Health += HealthPerLevel;
         }
+    }
+    public void TakeDamage(float damage)
+    {
+        Health -= damage;
+        Instantiate(pariclessSystem, EffectPoint.position, EffectPoint.rotation);
     }
 
     void Death()

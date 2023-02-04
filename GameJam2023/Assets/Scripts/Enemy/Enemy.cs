@@ -15,16 +15,13 @@ public class Enemy : MonoBehaviour
         health = health - damage;
         if (health <= 0)
         {
-            Debug.Log("Enemy Dead");
             Death();
         }
     }
 
     public void Death()
     {
-
-        Instantiate(pariclessSystem, EffectPoint.position, EffectPoint.rotation);
-        Debug.Log("particles");
+        Instantiate(pariclessSystem, EffectPoint.position, EffectPoint.rotation);     
         Destroy(gameObject);
         
     }
