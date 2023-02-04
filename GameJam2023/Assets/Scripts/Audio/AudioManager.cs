@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         m_Instance = this;
+        FmodRouting.SetUpBuses();
         
     }
 
