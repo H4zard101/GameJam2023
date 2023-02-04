@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5375647538632744507}
   - component: {fileID: 4668029135669628056}
   m_Layer: 0
-  m_Name: BloodSplash_PS
+  m_Name: BloodSplash_PS Red Blood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
