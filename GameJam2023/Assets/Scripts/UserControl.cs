@@ -158,7 +158,6 @@ public class UserControl : MonoBehaviour
         else
         {
             Debug.LogWarning("cannot upgrade, not enough seeds");
-
         }
     }
 

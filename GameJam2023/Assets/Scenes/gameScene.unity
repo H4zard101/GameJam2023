@@ -1426,6 +1426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   references: {fileID: 183914030}
+  parameters: {fileID: 0}
 --- !u!4 &183914032
 Transform:
   m_ObjectHideFlags: 0
@@ -4505,7 +4506,7 @@ MonoBehaviour:
   cam: {fileID: 707970762}
   SelectorPrefab: {fileID: 453296444302262670, guid: 7bb54a6e5f70fdc428f6da6b558b2a39, type: 3}
   MoveDisplayPrefab: {fileID: 3678820693224346520, guid: 578a8a34defa9b2469b6fefd69d450fd, type: 3}
-  TurrentUpgradeUI: {fileID: 0}
+  TurrentUpgradeUI: {fileID: 753727647}
 --- !u!4 &699508710
 Transform:
   m_ObjectHideFlags: 0
