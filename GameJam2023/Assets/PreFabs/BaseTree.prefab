@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 5040362602478617632}
   - component: {fileID: 102136290112536733}
   - component: {fileID: 102136290112536729}
+  - component: {fileID: 5615964823727082071}
   m_Layer: 0
   m_Name: BaseTree
   m_TagString: Tree
@@ -254,6 +255,18 @@ MonoBehaviour:
   - {fileID: 6415938912303618557}
   Distance: 5
   spawnableTurrets: []
+--- !u!114 &5615964823727082071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6415938912303618557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd6b9fc88e6412b48b4af259fc4c21d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8205240419410405921
 GameObject:
   m_ObjectHideFlags: 0
