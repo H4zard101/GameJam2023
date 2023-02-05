@@ -306,12 +306,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbdcb877fc02465459b5a5705dc9ca68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WaterAmount: 10
-  SeedAmount: 10
-  TreeCanBePlaced: 1
-  TurretUpgradeCanBe: 1
-  _Time: 10
-  maxTime: 10
 --- !u!1001 &281271388
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -471,6 +465,20 @@ MonoBehaviour:
       Data3: -849423221
       Data4: 797473669
     Path: event:/Ambience
+  turretPlacedEvent:
+    Guid:
+      Data1: -435071239
+      Data2: 1139200266
+      Data3: -507509064
+      Data4: 603328300
+    Path: event:/TurretPlaced
+  enemyExplodeEvent:
+    Guid:
+      Data1: -761807378
+      Data2: 1211022525
+      Data3: -1676568688
+      Data4: -517473607
+    Path: event:/Explosion
 --- !u!114 &389970551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1067,8 +1075,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Width: 8
   Height: 8
-  TurnIndicatorText: {fileID: 0}
-  invenetory: {fileID: 0}
+  inventory: {fileID: 0}
+  resourceUI: {fileID: 0}
+  turnUI: {fileID: 0}
   cost: 5
 --- !u!224 &905805882 stripped
 RectTransform:
