@@ -148,9 +148,9 @@ public class Gameboard : MonoBehaviour
             TreeManager.instance.allTrees.Add(tree);
             tree.tag = "Tree";
             AudioPlayback.PlayOneShot(AudioManager.Instance.references.turretPlacedEvent, null);
-            treesPlanted += 1;
-            AudioManager.Instance.parameters.SetParamByName(AudioManager.Instance.musicInstance, "TreeCount", treesPlanted);
+            treesPlanted += 1;         
             Debug.Log("Tree count" + treesPlanted);
+
         }
 
     }
