@@ -145,6 +145,7 @@ public class Gameboard : MonoBehaviour
         if(inventory.PlaceTree(cost))
         {
             Instantiate(U.turrets[0], locationToPlace, Quaternion.identity);
+            AudioPlayback.PlayOneShot(AudioManager.Instance.references.turretPlacedEvent, null);
         }
 
     }
