@@ -694,6 +694,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 158264008445406050, guid: b5999c9fd2a5890448894921b88c8b2d, type: 3}
   m_PrefabInstance: {fileID: 1974676848}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &100884626 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1306736450285852214, guid: 51668d6765e6cac488f4c1535c1ff12b, type: 3}
+  m_PrefabInstance: {fileID: 8092482029152843436}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &112481404
 GameObject:
   m_ObjectHideFlags: 0
@@ -4116,7 +4121,9 @@ MonoBehaviour:
   inventory: {fileID: 0}
   resourceUI: {fileID: 2131415083}
   turnUI: {fileID: 1043674292}
+  MotherTree: {fileID: 100884626}
   cost: 5
+  treesPlanted: 0
   TreePlacementUI: {fileID: 778979587}
 --- !u!156049354 &579420278
 Grid:
@@ -4897,6 +4904,7 @@ MonoBehaviour:
   TurretUpgradeCanBe: 1
   _Time: 10
   maxTime: 10
+  numberOfTrees: 0
 --- !u!114 &699508712
 MonoBehaviour:
   m_ObjectHideFlags: 0
