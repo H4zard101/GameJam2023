@@ -31,6 +31,8 @@ public class Gameboard : MonoBehaviour
 
     public Inventory20 inventory;
 
+    public GameObject cameraController;
+
     [SerializeField] private ResourceUI resourceUI;
     [SerializeField] private TurnUI turnUI;
 
@@ -71,11 +73,16 @@ public class Gameboard : MonoBehaviour
             subtimer = 0;
         }
 
-        if (timer % 30 == 0 && timer > 0)
+        if (timer % 3 == 0 && timer > 0)
         {
             turn_num += 1;
             UpdateTurnIndicator();
             timer += 1;
+
+            if (turn_num % 5 == 0)
+            {
+                cameraController.GetComponent<CameraController>().level += 1;
+            }
 
             if (turn_num == 13)
             {

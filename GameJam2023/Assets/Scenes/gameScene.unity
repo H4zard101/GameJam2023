@@ -4385,6 +4385,7 @@ MonoBehaviour:
   - {fileID: 1894468108}
   - {fileID: 1266112803}
   inventory: {fileID: 0}
+  cameraController: {fileID: 1027517354}
   resourceUI: {fileID: 2131415083}
   turnUI: {fileID: 1043674292}
   MotherTree: {fileID: 100884626}
@@ -5218,8 +5219,8 @@ MonoBehaviour:
   SeedAmount: 10
   TreeCanBePlaced: 1
   TurretUpgradeCanBe: 1
-  _Time: 10
-  maxTime: 10
+  _Time: 5
+  maxTime: 5
   numberOfTrees: 0
 --- !u!114 &699508712
 MonoBehaviour:
@@ -6918,7 +6919,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1027517354}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
   m_Name: 
