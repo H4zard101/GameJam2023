@@ -14,6 +14,15 @@ public class TurretLockOn : MonoBehaviour
     public float fireRate = 1f;
     private float fireCountdown = 0f;
 
+    public GameObject carrotBullet;
+    public GameObject raddishBullet;
+    public GameObject potatoBullet;
+
+    public GameObject standard;
+    public GameObject sniper;
+    public GameObject rapid;
+
+
     public enum TurretType
     {
         StandardTurret,
@@ -23,10 +32,38 @@ public class TurretLockOn : MonoBehaviour
     };
     public TurretType turretType;
 
-
     private void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
+
+        if(turretType == TurretType.StandardTurret)
+        {
+            range = 20.0f;
+            fireRate = 1.0f;
+            bulletPrefab = potatoBullet;
+            standard.SetActive(true);
+            rapid.SetActive(false);
+            sniper.SetActive(false);
+
+        }
+        if (turretType == TurretType.RapidFireTurret)
+        {
+            range = 10.0f;
+            fireRate = 2.0f;
+            bulletPrefab = carrotBullet;
+            standard.SetActive(false);
+            rapid.SetActive(true);
+            sniper.SetActive(false);
+        }
+        if (turretType == TurretType.SniperTurret)
+        {
+            range = 30.0f;
+            fireRate = 0.5f;
+            bulletPrefab = raddishBullet;
+            standard.SetActive(false);
+            rapid.SetActive(false);
+            sniper.SetActive(true);
+        }
     }
 
 
