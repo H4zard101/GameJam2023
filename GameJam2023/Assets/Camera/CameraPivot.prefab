@@ -31,7 +31,7 @@ Transform:
   m_Children:
   - {fileID: 6635893851908681229}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 30, z: 0}
 --- !u!114 &6635893851034982450
 MonoBehaviour:
@@ -66,6 +66,7 @@ GameObject:
   - component: {fileID: 6635893851908681229}
   - component: {fileID: 6635893851908681231}
   - component: {fileID: 6635893851908681228}
+  - component: {fileID: 9016749002879270092}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -139,3 +140,17 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6635893851908681218}
   m_Enabled: 1
+--- !u!114 &9016749002879270092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6635893851908681218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f3758e437985a24b96860f3a74b2c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useCanvas: 0
+  snapshotCanvasPrefab: {fileID: 2654080978173619198, guid: 3a9765b469d010f4da2f7ecc008810d1, type: 3}

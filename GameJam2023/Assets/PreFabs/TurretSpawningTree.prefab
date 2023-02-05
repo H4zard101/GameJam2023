@@ -234,6 +234,6 @@ MonoBehaviour:
   start: {fileID: 0}
   end: {fileID: 0}
   rand_box_size: 3
-  num_vines: 3
+  num_vines: 15
   SEGMENT_COUNT: 50
   scale: 1
