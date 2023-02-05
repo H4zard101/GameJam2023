@@ -147,7 +147,7 @@ public class Gameboard : MonoBehaviour
             var tree = Instantiate(U.turrets[0], locationToPlace, Quaternion.identity);
             tree.tag = "Tree";
             AudioPlayback.PlayOneShot(AudioManager.Instance.references.turretPlacedEvent, null);
-            treesPlanted += 0;
+            treesPlanted += 1;
             AudioManager.Instance.parameters.SetParamByName(AudioManager.Instance.musicInstance, "TreeCount", treesPlanted);
             Debug.Log("Tree count" + treesPlanted);
         }
