@@ -10,6 +10,9 @@ public class AudioManager : MonoBehaviour
     private static AudioManager m_Instance;
     
     public AudioReferences references;
+    
+    public FmodParameters parameters;
+
 
     public EventInstance musicInstance;
     public EventInstance ambienceInstance;

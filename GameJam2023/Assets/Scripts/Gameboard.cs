@@ -32,7 +32,7 @@ public class Gameboard : MonoBehaviour
 
     public int cost = 5;
     
-
+    private int treesPlanted = 0;
 
     // Start is called before the first frame update
     void Awake()
@@ -147,6 +147,9 @@ public class Gameboard : MonoBehaviour
             var tree = Instantiate(U.turrets[0], locationToPlace, Quaternion.identity);
             tree.tag = "Tree";
             AudioPlayback.PlayOneShot(AudioManager.Instance.references.turretPlacedEvent, null);
+            treesPlanted += 0;
+            AudioManager.Instance.parameters.SetParamByName(AudioManager.Instance.musicInstance, "TreeCount", treesPlanted);
+            Debug.Log("Tree count" + treesPlanted);
         }
 
     }
