@@ -10,12 +10,28 @@ public class Bullet : MonoBehaviour
 
     public enum AmmoType
     {
-        The_Irish_Favorite,
-        Eggcorn,
-        PineCone
+        potato,
+        carrot,
+        raddish
     };
 
     public AmmoType ammoType;
+
+    public void Start()
+    {
+        if(ammoType == AmmoType.potato)
+        {
+            damage = 30;
+        }
+        if (ammoType == AmmoType.carrot)
+        {
+            damage = 20;
+        }
+        if (ammoType == AmmoType.raddish)
+        {
+            damage = 40;
+        }
+    }
     public void Seek(Transform _target)
     {
         target = _target;

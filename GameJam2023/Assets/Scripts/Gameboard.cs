@@ -12,7 +12,7 @@ public class Gameboard : MonoBehaviour
     public int Width;
     public int Height;
 
-    public Text TurnIndicatorText;
+    private int turn_num = 1;
 
     public Grid Grid => m_Grid;
     public AnimationSystem AnimationSystem => m_AnimSystem;
@@ -25,7 +25,10 @@ public class Gameboard : MonoBehaviour
 
     private Plane m_Plane;
 
-    public Invenetory20 invenetory;
+    public Inventory20 inventory;
+
+    [SerializeField] private ResourceUI resourceUI;
+    [SerializeField] private TurnUI turnUI;
 
     public int cost = 5;
     
@@ -40,8 +43,8 @@ public class Gameboard : MonoBehaviour
         m_AnimSystem = new AnimationSystem();
         
         m_Plane = new Plane(Vector3.up, Vector3.zero);
-        invenetory = FindObjectOfType<Invenetory20>();
-    
+        inventory = FindObjectOfType<Inventory20>();
+        resourceUI.SetInventory(inventory);
     }
 
     private void Start()
@@ -139,9 +142,11 @@ public class Gameboard : MonoBehaviour
 
     public void PlaceUnit(Unit U, Vector3Int locationToPlace)
     {
-        if(invenetory.PlaceTree(cost))
+        if(inventory.PlaceTree(cost))
         {
-            Instantiate(U.turrets[0], locationToPlace, Quaternion.identity);
+            var tree = Instantiate(U.turrets[0], locationToPlace, Quaternion.identity);
+            tree.tag = "Tree";
+            AudioPlayback.PlayOneShot(AudioManager.Instance.references.turretPlacedEvent, null);
         }
 
     }
@@ -152,6 +157,7 @@ public class Gameboard : MonoBehaviour
     void UpdateTurnIndicator()
     {
         //TurnIndicatorText.text = (m_CurrentTeam == Unit.Team.White ? "White" : "Black") + " is playing";
+        turnUI.UpdateTurn(turn_num);
     }
 
     private void OnDrawGizmos()
