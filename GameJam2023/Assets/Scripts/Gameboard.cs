@@ -30,6 +30,8 @@ public class Gameboard : MonoBehaviour
     [SerializeField] private ResourceUI resourceUI;
     [SerializeField] private TurnUI turnUI;
 
+    public GameObject MotherTree;
+
     public int cost = 5;
     
     private int treesPlanted = 0;
@@ -150,6 +152,10 @@ public class Gameboard : MonoBehaviour
             AudioPlayback.PlayOneShot(AudioManager.Instance.references.turretPlacedEvent, null);
             treesPlanted += 1;         
             Debug.Log("Tree count" + treesPlanted);
+
+            tree.gameObject.GetComponent<TreeRoots>().start = MotherTree;
+            tree.gameObject.GetComponent<TreeRoots>().end = tree;
+            tree.gameObject.GetComponent<TreeRoots>().Grow();
 
         }
 

@@ -3773,6 +3773,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   resourceUI: {fileID: 2131415083}
   turnUI: {fileID: 1043674292}
+  MotherTree: {fileID: 1039861710}
   cost: 5
 --- !u!156049354 &579420278
 Grid:
@@ -6207,6 +6208,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attenuationObject: {fileID: 1027517354}
+--- !u!1 &1039861710 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1306736450285852214, guid: 51668d6765e6cac488f4c1535c1ff12b, type: 3}
+  m_PrefabInstance: {fileID: 8092482029152843436}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1043674290
 GameObject:
   m_ObjectHideFlags: 0
