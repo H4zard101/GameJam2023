@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -165,7 +165,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: ButtonEmpty_2
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 20
+        width: 190
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd74490d46e44da449feeff5efe5b678
+      internalID: -1475587155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ButtonEmpty_3
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 21
+        width: 190
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bad1831ae89e1f4ebae5235278c74ff
+      internalID: -1207336874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ButtonEmpty_4
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 20
+        width: 190
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13e98c8d5a7507f45b3af7812d7c6849
+      internalID: 305752379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ButtonEmpty_5
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 20
+        width: 190
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 155ac8533bf7ef046a718c09641df928
+      internalID: -1264309642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -176,7 +260,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ButtonEmpty_3: -1207336874
+      ButtonEmpty_2: -1475587155
+      ButtonEmpty_4: 305752379
+      ButtonEmpty_1: -1859855124
+      ButtonEmpty_6: 1052790207
+      ButtonEmpty_7: 2099735221
+      ButtonEmpty_5: -1264309642
+      ButtonEmpty_0: -488695655
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
