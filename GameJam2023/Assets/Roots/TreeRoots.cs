@@ -44,7 +44,7 @@ public class TreeRoots : MonoBehaviour
                 {
                     dist_to_start = Vector3.Distance(start.transform.position, pos);
                     Vector3 newScale = new Vector3(1, 1, 1);
-                    newScale.x = newScale.z = (1.4f - 1.2f * dist_to_start / max_dist);
+                    newScale.x = newScale.z = (1.0f - 1.0f * dist_to_start / max_dist);
                     newScale.y = Mathf.Max((0.2f * dist_to_start / max_dist), 0.4f);
                     segment.transform.localScale = newScale;
                 }

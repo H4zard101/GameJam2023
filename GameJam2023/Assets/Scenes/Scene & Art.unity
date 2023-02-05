@@ -1746,6 +1746,7 @@ GameObject:
   - component: {fileID: 183914032}
   - component: {fileID: 183914031}
   - component: {fileID: 183914030}
+  - component: {fileID: 183914033}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -1862,6 +1863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   references: {fileID: 183914030}
+  parameters: {fileID: 183914033}
 --- !u!4 &183914032
 Transform:
   m_ObjectHideFlags: 0
@@ -1877,6 +1879,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &183914033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183914029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd9dfc509a1ba2e45b9629fee0083b7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &186447790 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d78ef6f6f90e7384d97588a23985acf4, type: 3}
@@ -5282,6 +5296,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   resourceUI: {fileID: 2131415083}
   turnUI: {fileID: 1043674292}
+  MotherTree: {fileID: 826029734}
   cost: 5
 --- !u!156049354 &579420278
 Grid:
@@ -6449,6 +6464,7 @@ MonoBehaviour:
   cam: {fileID: 707970762}
   SelectorPrefab: {fileID: 453296444302262670, guid: 7bb54a6e5f70fdc428f6da6b558b2a39, type: 3}
   MoveDisplayPrefab: {fileID: 3678820693224346520, guid: 578a8a34defa9b2469b6fefd69d450fd, type: 3}
+  TurrentUpgradeUI: {fileID: 0}
 --- !u!4 &699508710
 Transform:
   m_ObjectHideFlags: 0
@@ -6482,6 +6498,7 @@ MonoBehaviour:
   TurretUpgradeCanBe: 1
   _Time: 10
   maxTime: 10
+  numberOfTrees: 0
 --- !u!114 &699508712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7615,6 +7632,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 817957661}
   m_CullTransparentMesh: 1
+--- !u!1 &826029734 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1306736450285852214, guid: 51668d6765e6cac488f4c1535c1ff12b, type: 3}
+  m_PrefabInstance: {fileID: 8092482029152843436}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &832440865 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 253814233721698830, guid: 6d899f4579bb04e43aacf96d063675d0, type: 3}
