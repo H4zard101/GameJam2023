@@ -15,10 +15,10 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        if(EffectPoint!=null)
+        if(EffectPoint!=null && EffectPoint.GetComponent<ParticleSystem>())
             EffectPoint.GetComponent<ParticleSystem>().Stop();
 
-        animationController = GetComponent<Animator>();
+        animationController = transform.GetChild(0).GetComponent<Animator>();
         animationController.SetTrigger("running");
         inventory = FindObjectOfType<Inventory20>();
     }

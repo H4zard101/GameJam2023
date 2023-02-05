@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MotherTree : GameTrees
 {
@@ -9,6 +10,9 @@ public class MotherTree : GameTrees
     public int maximumNuberOfSourceTrees = 3;
     public int motherTreeLevel = 1;
     public float Health = 400;
+
+    private bool should_die = false;
+    private float t = 0;
 
     public Transform EffectPoint;
     public GameObject pariclessSystem;
@@ -20,17 +24,32 @@ public class MotherTree : GameTrees
     }
     private void Update()
     {
-        if (Health <= 0)
+        if (should_die == true)
         {
-            TreeManager.instance.RemoveTree(gameObject);
+            Debug.Log(t);
+            t += Time.deltaTime;
 
-            Destroy(this.gameObject);
-            foreach (GameObject trees in sourceTreesUnderInfluence)
+            if (t > 2)
             {
-                Destroy(trees);
+                TreeManager.instance.RemoveTree(gameObject);
+
+                Destroy(this.gameObject);
+                foreach (GameObject trees in sourceTreesUnderInfluence)
+                {
+                    Destroy(trees);
+                }
+
+                SceneManager.LoadScene(2);
             }
+
+        } else if (Health <= 0)
+        {
+            should_die = true;
+
+            AudioManager.Instance.parameters.SetParamByLabelName(AudioManager.Instance.musicInstance, "PlayerDead", "PlayerDead");
         }
     }
+
 
     public override void TakeDamage(float damage)
     {

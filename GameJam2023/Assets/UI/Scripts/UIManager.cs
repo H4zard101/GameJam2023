@@ -35,6 +35,5 @@ public class UIManager : MonoBehaviour
     public void OpenCreditsScene()
     {
         SceneManager.LoadScene("Credits");
-
     }
 }
