@@ -42,7 +42,11 @@ MonoBehaviour:
   Path: FMODBanks/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
+<<<<<<< HEAD
   lastModified: 638112012624752263
+=======
+  lastModified: 638112032158161880
+>>>>>>> 7b1ba1d58b17dc127eea29f0cdc39af2636490cb
   FileSizes:
   - Name: 
     Value: 1514
@@ -142,7 +146,11 @@ MonoBehaviour:
   Path: FMODBanks/Master.bank
   Name: Master
   StudioPath: bank:/Master
+<<<<<<< HEAD
   lastModified: 638112012624742261
+=======
+  lastModified: 638112032158142255
+>>>>>>> 7b1ba1d58b17dc127eea29f0cdc39af2636490cb
   FileSizes: []
   Exists: 1
 --- !u!114 &-213924622701883303
@@ -166,7 +174,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -726728400578374423}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -261,7 +269,11 @@ MonoBehaviour:
   - {fileID: -726728400578374423}
   StringsBanks:
   - {fileID: -4873056643976685593}
+<<<<<<< HEAD
   cacheTime: 638112012624752263
+=======
+  cacheTime: 638112032158161880
+>>>>>>> 7b1ba1d58b17dc127eea29f0cdc39af2636490cb
   cacheVersion: 131601
 --- !u!114 &35389423252389652
 MonoBehaviour:
@@ -284,7 +296,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -726728400578374423}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -338,7 +350,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -726728400578374423}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -365,7 +377,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -726728400578374423}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 0
@@ -392,7 +404,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -726728400578374423}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -419,7 +431,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -726728400578374423}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1

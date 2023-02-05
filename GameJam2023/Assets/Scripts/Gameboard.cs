@@ -30,9 +30,11 @@ public class Gameboard : MonoBehaviour
     [SerializeField] private ResourceUI resourceUI;
     [SerializeField] private TurnUI turnUI;
 
+    public GameObject MotherTree;
+
     public int cost = 5;
     
-
+    private int treesPlanted = 0;
 
     // Start is called before the first frame update
     void Awake()
@@ -145,8 +147,16 @@ public class Gameboard : MonoBehaviour
         if(inventory.PlaceTree(cost))
         {
             var tree = Instantiate(U.turrets[0], locationToPlace, Quaternion.identity);
+            TreeManager.instance.allTrees.Add(tree);
             tree.tag = "Tree";
             AudioPlayback.PlayOneShot(AudioManager.Instance.references.turretPlacedEvent, null);
+            treesPlanted += 1;         
+            Debug.Log("Tree count" + treesPlanted);
+
+            tree.gameObject.GetComponent<TreeRoots>().start = MotherTree;
+            tree.gameObject.GetComponent<TreeRoots>().end = tree;
+            tree.gameObject.GetComponent<TreeRoots>().Grow();
+
         }
 
     }
