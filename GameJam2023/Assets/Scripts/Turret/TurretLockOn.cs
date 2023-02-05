@@ -69,7 +69,7 @@ public class TurretLockOn : MonoBehaviour
 
     void UpdateTarget()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Ai");
         float shortestDistance = Mathf.Infinity;
         GameObject nearestEnemy = null;
 
