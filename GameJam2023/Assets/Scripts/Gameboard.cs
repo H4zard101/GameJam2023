@@ -140,23 +140,38 @@ public class Gameboard : MonoBehaviour
         }
     }
 
+    public GameObject TreePlacementUI;
+    private Unit lastUnit;
+    private Vector3Int lastLocationToPlace;
+
     public void PlaceUnit(Unit U, Vector3Int locationToPlace)
     {
         if(inventory.PlaceTree(cost))
         {
-            var tree = Instantiate(U.turrets[0], locationToPlace, Quaternion.identity);
-            TreeManager.instance.allTrees.Add(tree);
-            tree.tag = "Tree";
-            AudioPlayback.PlayOneShot(AudioManager.Instance.references.turretPlacedEvent, null);
-            treesPlanted += 0;
-            AudioManager.Instance.parameters.SetParamByName(AudioManager.Instance.musicInstance, "TreeCount", treesPlanted);
-            Debug.Log("Tree count" + treesPlanted);
+            lastUnit = U;
+            lastLocationToPlace = locationToPlace;
+            TreePlacementUI.SetActive(true);
         }
 
     }
 
+    public void SelectedTreeAndTurret(string type)
+    {
+        Debug.LogWarning("Turret Type : " + type);
 
-  
+        var tree = Instantiate(lastUnit.turrets[0], lastLocationToPlace, Quaternion.identity);
+        tree.GetComponent<TreeSource>().SetTurret(type);
+        TreePlacementUI.SetActive(false);
+
+        TreeManager.instance.allTrees.Add(tree);
+        tree.tag = "Tree";
+        AudioPlayback.PlayOneShot(AudioManager.Instance.references.turretPlacedEvent, null);
+        treesPlanted += 0;
+        AudioManager.Instance.parameters.SetParamByName(AudioManager.Instance.musicInstance, "TreeCount", treesPlanted);
+        Debug.Log("Tree count" + treesPlanted);
+    }
+
+
 
     void UpdateTurnIndicator()
     {

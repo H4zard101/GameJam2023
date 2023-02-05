@@ -31,8 +31,13 @@ public class MoverAnimation : MonoBehaviour
 		tr = GetComponent<Transform>();
 	}
 
-	/// <summary>Point for the last spawn of <see cref="endOfPathEffect"/></summary>
-	protected Vector3 lastTarget;
+    private void Start()
+    {
+		anim = transform.GetChild(0).GetComponent<Animator>();
+    }
+
+    /// <summary>Point for the last spawn of <see cref="endOfPathEffect"/></summary>
+    protected Vector3 lastTarget;
 
 	/// <summary>
 	/// Called when the end of path has been reached.

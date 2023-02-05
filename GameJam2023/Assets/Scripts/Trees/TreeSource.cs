@@ -18,20 +18,7 @@ public class TreeSource : GameTrees
 
     private void Start()
     {
-        positions[0] = transform.position;
-        positions[0].x += gridSize;
-        positions[0].y = 0;
-        positions[1] = transform.position;
-        positions[1].x -= gridSize;
-        positions[1].y = 0;
-        positions[2] = transform.position;
-        positions[2].z += gridSize;
-        positions[2].y = 0;
-        positions[3] = transform.position;
-        positions[3].z -= gridSize;
-        positions[3].y = 0;
 
-        Upgrade();
     }
 
     public void Awake()
@@ -49,14 +36,70 @@ public class TreeSource : GameTrees
         }
     }
 
-    public void Upgrade()
+    public void SetTurret(string type)
     {
+        Debug.LogWarning("SetTurret Called :" + type);
+
+        positions[0] = transform.position;
+        positions[0].x += gridSize;
+        positions[0].y = 0;
+        positions[1] = transform.position;
+        positions[1].x -= gridSize;
+        positions[1].y = 0;
+        positions[2] = transform.position;
+        positions[2].z += gridSize;
+        positions[2].y = 0;
+        positions[3] = transform.position;
+        positions[3].z -= gridSize;
+        positions[3].y = 0;
+
+        Upgrade(type);
+    }
+
+    public void Upgrade(string turretType = "StandardTurret")
+    {
+
         if (turret_type != null)
         {
             if (treeSourceLevel < 4)
             {
                 treeSourceLevel += 1;
-                GameObject new_turret = Instantiate(turret_type, positions[treeSourceLevel - 1], Quaternion.identity);
+
+
+                GameObject turretToInstantiate = turret_type;
+
+                //set turret type based on the UI Selection 
+                switch (turretType)
+                {
+                    case "StandardTurret":
+                        Debug.LogWarning("SetTurret Called : StandardTurret");
+
+                        turretToInstantiate.GetComponent<TurretLockOn>().turretType = TurretLockOn.TurretType.StandardTurret;
+                        break;
+                    case "SniperTurret":
+                        Debug.LogWarning("SetTurret Called : SniperTurret");
+
+                        turretToInstantiate.GetComponent<TurretLockOn>().turretType = TurretLockOn.TurretType.SniperTurret;
+                        break;
+                    case "RapidFireTurret":
+                        Debug.LogWarning("SetTurret Called : RapidFireTurret");
+
+                        turretToInstantiate.GetComponent<TurretLockOn>().turretType = TurretLockOn.TurretType.RapidFireTurret;
+                        break;
+                    default:
+                        Debug.LogWarning("SetTurret Called : d");
+
+                        turretToInstantiate.GetComponent<TurretLockOn>().turretType = TurretLockOn.TurretType.StandardTurret;
+                        break;
+                }
+
+
+                GameObject new_turret = Instantiate(turretToInstantiate, positions[treeSourceLevel - 1], Quaternion.identity);
+                if (new_turret == null)
+                {
+                    Debug.LogWarning("turret is null");
+
+                }
                 turretsUnderInfluence[treeSourceLevel - 1] = new_turret;
                 Health += HealthPerLevel;
             }
