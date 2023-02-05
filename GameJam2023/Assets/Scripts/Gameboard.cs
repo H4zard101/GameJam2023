@@ -13,6 +13,10 @@ public class Gameboard : MonoBehaviour
     public int Height;
 
     private int turn_num = 1;
+    private int timer = 0;
+    private float subtimer = 0;
+
+    public GameObject[] all_spawners;
 
     public Grid Grid => m_Grid;
     public AnimationSystem AnimationSystem => m_AnimSystem;
@@ -52,11 +56,39 @@ public class Gameboard : MonoBehaviour
     private void Start()
     {
         UpdateTurnIndicator();
+        all_spawners[0].SetActive(true);
     }
 
     private void Update()
     {
         m_AnimSystem.Update();
+
+        subtimer += Time.deltaTime;
+
+        if (subtimer > 1)
+        {
+            timer += 1;
+            subtimer = 0;
+        }
+
+        if (timer % 30 == 0 && timer > 0)
+        {
+            turn_num += 1;
+            UpdateTurnIndicator();
+            timer += 1;
+
+            if (turn_num == 13)
+            {
+                foreach(GameObject spawner in all_spawners)
+                {
+                    spawner.GetComponent<AISpawner>().spawnInterval = 0.5f;
+                }
+            }
+            else
+            {
+                all_spawners[turn_num - 1].SetActive(true);
+            }
+        }
     }
 
     public void SetUnit(Vector3Int cell, Unit unit)
