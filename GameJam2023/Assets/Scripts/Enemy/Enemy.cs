@@ -38,8 +38,12 @@ public class Enemy : MonoBehaviour
        
          
         Destroy(gameObject);
+        if (inventory == null)
+        {
+            inventory = FindObjectOfType<Inventory20>();
+            
+        }
         inventory.GetComponent<Inventory20>().SeedAmount++;
-        Debug.Log(inventory.SeedAmount.ToString());
-        
+        //Debug.LogWarning("seed:" + inventory.SeedAmount.ToString());
     }
 }
