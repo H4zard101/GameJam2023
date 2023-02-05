@@ -24,7 +24,10 @@ public class ResourceUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        waterAmount.text = inventory.WaterAmount.ToString();
-        seedAmount.text = inventory.SeedAmount.ToString();
+        if (inventory != null)
+        {
+            waterAmount.text = inventory.WaterAmount.ToString();
+            seedAmount.text = inventory.SeedAmount.ToString();
+        }
     }
 }
