@@ -73,7 +73,7 @@ public class Gameboard : MonoBehaviour
             subtimer = 0;
         }
 
-        if (timer % 3 == 0 && timer > 0)
+        if (timer % 30 == 0 && timer > 0)
         {
             turn_num += 1;
             UpdateTurnIndicator();

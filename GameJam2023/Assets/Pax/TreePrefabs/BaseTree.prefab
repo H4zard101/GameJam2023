@@ -554,7 +554,7 @@ GameObject:
   - component: {fileID: 7987897683847081136}
   - component: {fileID: 4639880070753124419}
   m_Layer: 0
-  m_Name: BaseTree_Options
+  m_Name: BaseTree
   m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

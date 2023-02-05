@@ -169,7 +169,7 @@ public class UserControl : MonoBehaviour
 
     public void UpgradeLastSelectedUnit()
     {
-        if (GetComponent<Inventory20>().UpgradeTurret(1))
+        if (GetComponent<Inventory20>().UpgradeTurret(100))
         {
             Debug.LogWarning("upgrading");
 

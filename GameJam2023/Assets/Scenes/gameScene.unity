@@ -553,6 +553,10 @@ PrefabInstance:
       propertyPath: panSpeed
       value: 0.15
       objectReference: {fileID: 0}
+    - target: {fileID: 6635893851034982450, guid: a43f8664ceb2b4b4fa20a6986412a5b6, type: 3}
+      propertyPath: rotationAmount
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6635893851034982451, guid: a43f8664ceb2b4b4fa20a6986412a5b6, type: 3}
       propertyPath: m_RootOrder
       value: 0
