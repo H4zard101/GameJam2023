@@ -34,8 +34,9 @@ public class Enemy : MonoBehaviour
 
     public void Death()
     {
-        Instantiate(pariclessSystem, EffectPoint.position, EffectPoint.rotation);   
-        AudioPlayback.PlayOneShot(AudioManager.Instance.references.enemyDeathEvent, null);//Enemy death oneshot  
+        Instantiate(pariclessSystem, EffectPoint.position, EffectPoint.rotation);  
+       
+         
         Destroy(gameObject);
         inventory.GetComponent<Inventory20>().SeedAmount++;
         Debug.Log(inventory.SeedAmount.ToString());

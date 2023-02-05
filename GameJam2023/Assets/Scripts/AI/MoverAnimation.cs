@@ -45,6 +45,7 @@ public class MoverAnimation : MonoBehaviour
 		if (endOfPathEffect != null && Vector3.Distance(tr.position, lastTarget) > 1)
 		{
 			GameObject.Instantiate(endOfPathEffect, tr.position, tr.rotation);
+			 
 			lastTarget = tr.position;
 		}
 
@@ -69,6 +70,8 @@ public class MoverAnimation : MonoBehaviour
 	private IEnumerator DestroyWithDelay()
     {
 		yield return new WaitForSeconds(0.1f);
+		AudioPlayback.PlayOneShot(AudioManager.Instance.references.enemyDeathEvent, null);//Enemy death oneshot
+		 AudioPlayback.PlayOneShot(AudioManager.Instance.references.enemyExplodeEvent, this.gameObject); 
 		Destroy(gameObject);
 	}
 
