@@ -1399,6 +1399,20 @@ MonoBehaviour:
       Data3: -849423221
       Data4: 797473669
     Path: event:/Ambience
+  turretPlacedEvent:
+    Guid:
+      Data1: -435071239
+      Data2: 1139200266
+      Data3: -507509064
+      Data4: 603328300
+    Path: event:/TurretPlaced
+  enemyExplodeEvent:
+    Guid:
+      Data1: -761807378
+      Data2: 1211022525
+      Data3: -1676568688
+      Data4: -517473607
+    Path: event:/Explosion
 --- !u!114 &183914031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6147,6 +6161,24 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 68890d3e3252a3245a06ee617e8af2ed, type: 3}
+--- !u!1 &1027517354 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6635893851034982448, guid: a43f8664ceb2b4b4fa20a6986412a5b6, type: 3}
+  m_PrefabInstance: {fileID: 38830933}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1027517357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027517354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 1027517354}
 --- !u!1 &1043674290
 GameObject:
   m_ObjectHideFlags: 0
@@ -8656,7 +8688,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 2147483647
 --- !u!114 &1503635338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10058,6 +10090,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CornerTree
       objectReference: {fileID: 0}
+    - target: {fileID: 6415938912303618557, guid: 0612bb069b4597a40ac7f88c76a7d2f7, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7557583549226804974, guid: 0612bb069b4597a40ac7f88c76a7d2f7, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -10354,6 +10390,73 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: f61e93bc908c1374c826729e3b2cfb13, type: 3}
+--- !u!1 &1801665385
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1801665388}
+  - component: {fileID: 1801665387}
+  - component: {fileID: 1801665386}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1801665386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801665385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1801665387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801665385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &1801665388
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801665385}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1804677038 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5992306160078393410, guid: 4b75d5075ba1fd044babf2e3654ca990, type: 3}

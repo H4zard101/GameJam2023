@@ -1,9 +1,7 @@
 using UnityEngine;
 using System;
 using System.Runtime.ExceptionServices;
-using Unity.VisualScripting;
 using System.Collections.Generic;
-using static UnityEditor.PlayerSettings;
 
 public class VineSpreader : MonoBehaviour
 {

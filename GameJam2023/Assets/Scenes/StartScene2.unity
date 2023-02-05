@@ -10069,6 +10069,20 @@ MonoBehaviour:
       Data3: -849423221
       Data4: 797473669
     Path: event:/Ambience
+  turretPlacedEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  enemyExplodeEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!114 &1071955650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10318,7 +10332,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1703999157}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc236acd71f37ce4384fcb89f12a02b8, type: 3}
+  m_Script: {fileID: 11500000, guid: 50911b8de0276d84fa230abff924ea92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1703999159

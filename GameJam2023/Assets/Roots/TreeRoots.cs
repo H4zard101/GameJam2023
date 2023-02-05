@@ -1,8 +1,6 @@
 using UnityEngine;
 using System;
 using System.Runtime.ExceptionServices;
-using Unity.VisualScripting;
-using static UnityEditor.PlayerSettings;
 
 public class TreeRoots : MonoBehaviour
 {
