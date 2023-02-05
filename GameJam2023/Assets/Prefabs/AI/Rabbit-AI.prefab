@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 5575885957594695531}
   - component: {fileID: 7280957030023547799}
   - component: {fileID: 2686760757232540014}
+  - component: {fileID: -799509311379740559}
   m_Layer: 13
   m_Name: Rabbit-AI
   m_TagString: Ai
@@ -261,6 +262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 84991201291200789}
   endOfPathEffect: {fileID: 62916403567901308, guid: faed381a6880c384ba5e4b73024c140c, type: 3}
+  DamageValue: 5
 --- !u!114 &5575885957594695531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,6 +302,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.84936213, z: 1.579557}
   m_Center: {x: 0, y: 0.72315776, z: 0.28977847}
+--- !u!114 &-799509311379740559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5784705108809799670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b8eec7cc2532b34ebda35b146aea2de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyType: 0
+  health: 100
+  inventory: {fileID: 0}
+  EffectPoint: {fileID: 0}
+  pariclessSystem: {fileID: 0}
 --- !u!1001 &6423855000897266554
 PrefabInstance:
   m_ObjectHideFlags: 0
