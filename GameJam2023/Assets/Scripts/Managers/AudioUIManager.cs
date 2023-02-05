@@ -48,7 +48,7 @@ public class AudioUIManager : MonoBehaviour
         audioPanel.SetActive(true);
     }
 
-    private void HidePopUp()
+    public void HidePopUp()
     {
         audioPanel.SetActive(false);      
     }

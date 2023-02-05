@@ -44,9 +44,6 @@ public class AISetDestination : MonoBehaviour
                 continue;
             }           
         }
-
-        // Log the closest GameObject in the scene
-        Debug.Log("Closest GameObject: " + target.name);
     }
 
     void OnEnable()

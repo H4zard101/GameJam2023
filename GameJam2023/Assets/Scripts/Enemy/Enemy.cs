@@ -15,10 +15,10 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        if(EffectPoint!=null)
+        if(EffectPoint!=null && EffectPoint.GetComponent<ParticleSystem>())
             EffectPoint.GetComponent<ParticleSystem>().Stop();
 
-        animationController = GetComponent<Animator>();
+        animationController = transform.GetChild(0).GetComponent<Animator>();
         animationController.SetTrigger("running");
         inventory = FindObjectOfType<Inventory20>();
     }
@@ -34,11 +34,16 @@ public class Enemy : MonoBehaviour
 
     public void Death()
     {
-        Instantiate(pariclessSystem, EffectPoint.position, EffectPoint.rotation);   
-        AudioPlayback.PlayOneShot(AudioManager.Instance.references.enemyDeathEvent, null);//Enemy death oneshot  
+        Instantiate(pariclessSystem, EffectPoint.position, EffectPoint.rotation);  
+       
+         
         Destroy(gameObject);
+        if (inventory == null)
+        {
+            inventory = FindObjectOfType<Inventory20>();
+            
+        }
         inventory.GetComponent<Inventory20>().SeedAmount++;
-        Debug.Log(inventory.SeedAmount.ToString());
-        
+        //Debug.LogWarning("seed:" + inventory.SeedAmount.ToString());
     }
 }

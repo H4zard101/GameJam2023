@@ -46,6 +46,7 @@ public class TreeRoots : MonoBehaviour
                     Vector3 newScale = new Vector3(1, 1, 1);
                     newScale.x = newScale.z = (1.4f - 1.2f * dist_to_start / max_dist);
                     newScale.y = Mathf.Max((0.2f * dist_to_start / max_dist), 0.4f);
+                    newScale = newScale * 0.35f;
                     segment.transform.localScale = newScale;
                 }
                 Instantiate(segment, pos, Quaternion.FromToRotation(Vector3.up, pos - last_pos));

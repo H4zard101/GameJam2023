@@ -13,6 +13,10 @@ public class Gameboard : MonoBehaviour
     public int Height;
 
     private int turn_num = 1;
+    private int timer = 0;
+    private float subtimer = 0;
+
+    public GameObject[] all_spawners;
 
     public Grid Grid => m_Grid;
     public AnimationSystem AnimationSystem => m_AnimSystem;
@@ -30,9 +34,11 @@ public class Gameboard : MonoBehaviour
     [SerializeField] private ResourceUI resourceUI;
     [SerializeField] private TurnUI turnUI;
 
+    public GameObject MotherTree;
+
     public int cost = 5;
     
-
+    public int treesPlanted = 0;
 
     // Start is called before the first frame update
     void Awake()
@@ -50,11 +56,39 @@ public class Gameboard : MonoBehaviour
     private void Start()
     {
         UpdateTurnIndicator();
+        all_spawners[0].SetActive(true);
     }
 
     private void Update()
     {
         m_AnimSystem.Update();
+
+        subtimer += Time.deltaTime;
+
+        if (subtimer > 1)
+        {
+            timer += 1;
+            subtimer = 0;
+        }
+
+        if (timer % 30 == 0 && timer > 0)
+        {
+            turn_num += 1;
+            UpdateTurnIndicator();
+            timer += 1;
+
+            if (turn_num == 13)
+            {
+                foreach(GameObject spawner in all_spawners)
+                {
+                    spawner.GetComponent<AISpawner>().spawnInterval = 0.5f;
+                }
+            }
+            else
+            {
+                all_spawners[turn_num - 1].SetActive(true);
+            }
+        }
     }
 
     public void SetUnit(Vector3Int cell, Unit unit)
@@ -140,19 +174,42 @@ public class Gameboard : MonoBehaviour
         }
     }
 
+    public GameObject TreePlacementUI;
+    private Unit lastUnit;
+    private Vector3Int lastLocationToPlace;
+
     public void PlaceUnit(Unit U, Vector3Int locationToPlace)
     {
         if(inventory.PlaceTree(cost))
         {
-            var tree = Instantiate(U.turrets[0], locationToPlace, Quaternion.identity);
-            tree.tag = "Tree";
-            AudioPlayback.PlayOneShot(AudioManager.Instance.references.turretPlacedEvent, null);
+            lastUnit = U;
+            lastLocationToPlace = locationToPlace;
+            TreePlacementUI.SetActive(true);
         }
 
     }
 
+    public void SelectedTreeAndTurret(string type)
+    {
+        Debug.LogWarning("Turret Type : " + type);
 
-  
+        var tree = Instantiate(lastUnit.turrets[0], lastLocationToPlace, Quaternion.identity);
+        tree.GetComponent<TreeSource>().SetTurret(type);
+        TreePlacementUI.SetActive(false);
+
+        TreeManager.instance.allTrees.Add(tree);
+        tree.tag = "Tree";
+        AudioPlayback.PlayOneShot(AudioManager.Instance.references.turretPlacedEvent, null);
+        treesPlanted += 1;
+        //AudioManager.Instance.parameters.SetParamByName(AudioManager.Instance.musicInstance, "TreeCount", treesPlanted);
+
+        tree.gameObject.GetComponent<TreeRoots>().start = MotherTree;
+        tree.gameObject.GetComponent<TreeRoots>().end = tree;
+        tree.gameObject.GetComponent<TreeRoots>().Grow();
+        Debug.Log("Tree count" + treesPlanted);
+    }
+
+
 
     void UpdateTurnIndicator()
     {

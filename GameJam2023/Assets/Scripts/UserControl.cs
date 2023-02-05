@@ -25,6 +25,8 @@ public class UserControl : MonoBehaviour
     private int m_DisplayedMoveDisplay;
     private List<GameObject> m_MoveDisplayPool = new List<GameObject>();
 
+    public GameObject TurrentUpgradeUI;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -70,11 +72,6 @@ public class UserControl : MonoBehaviour
                 }
                 break;
         }
-
-        if(Input.GetKeyDown("escape"))
-        {
-            AudioUIManager.Instance.OpenPopUp();
-        }
     }
 
     void DeselectUnit()
@@ -109,6 +106,13 @@ public class UserControl : MonoBehaviour
         
         if (m_SelectedUnit != null)
         {
+            if (m_SelectedUnit.name.Contains("BaseTree"))
+            {
+                Debug.LogWarning("selected tree:" + m_SelectedUnit.name);
+
+                //do something on base tree click
+                TurrentUpgradeUI.SetActive(true);
+            }
             var gameboard = Gameboard.Instance;
             m_Selector.SetActive(true);
             m_Selector.transform.position = m_SelectedUnit.transform.position;
@@ -126,13 +130,32 @@ public class UserControl : MonoBehaviour
 
             m_DisplayedMoveDisplay = count;
             m_CurrentState = State.MoveUnit;
+
+
         }
         else
         {
             DeselectUnit();
         }
     }
-    
+
+
+    public void UpgradeLastSelectedUnit()
+    {
+        if (GetComponent<Inventory20>().UpgradeTurret(100))
+        {
+            Debug.LogWarning("upgrading");
+
+            m_SelectedUnit.GetComponent<TreeSource>().Upgrade();
+            TurrentUpgradeUI.SetActive(false);
+
+        }
+        else
+        {
+            Debug.LogWarning("cannot upgrade, not enough seeds");
+        }
+    }
+
     void CleanMoveIndicator(int lowerBound, int upperBound)
     {
         for (int i = lowerBound; i < upperBound; ++i)

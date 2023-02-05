@@ -10,6 +10,6 @@ public class TurnUI : MonoBehaviour
 
     public void UpdateTurn(int turn_num)
     {
-        turnAmount.text = "TURN " + turn_num.ToString();
+        turnAmount.text = "ROUND " + turn_num.ToString();
     }
 }

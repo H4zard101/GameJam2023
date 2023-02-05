@@ -13,6 +13,8 @@ public class Inventory20 : MonoBehaviour
     public float _Time = 10;
     public float maxTime = 10;
 
+    public int numberOfTrees = 0;
+
     public bool PlaceTree (int cost)
     {
        
@@ -20,6 +22,8 @@ public class Inventory20 : MonoBehaviour
         {
             WaterAmount -= cost;
             TreeCanBePlaced = true;
+            numberOfTrees++;
+            AudioManager.Instance.parameters.SetParamByName(AudioManager.Instance.musicInstance, "TreeCount", numberOfTrees);
             Debug.Log(WaterAmount.ToString());
         }
         else
