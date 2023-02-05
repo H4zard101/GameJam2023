@@ -36,7 +36,7 @@ public class MenuAudioManager : MonoBehaviour
 
     public void OnDestroy()
     {
-        StartMenuMusic();
+        StopMenuMusic();
         
     }
 }
