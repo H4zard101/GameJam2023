@@ -347,7 +347,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyType: 0
-  health: 1
+  health: 30
   inventory: {fileID: 0}
   EffectPoint: {fileID: 8531189974410640292}
   pariclessSystem: {fileID: 7690084789245741680, guid: 23aecf015c6baa44e9645cc4b679fb9e, type: 3}
