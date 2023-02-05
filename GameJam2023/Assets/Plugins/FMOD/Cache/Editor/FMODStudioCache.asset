@@ -42,10 +42,10 @@ MonoBehaviour:
   Path: FMODBanks/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638111933754304314
+  lastModified: 638112001302096370
   FileSizes:
   - Name: 
-    Value: 1426
+    Value: 1514
   Exists: 1
 --- !u!114 &-4568983758714112922
 MonoBehaviour:
@@ -94,7 +94,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -726728400578374423}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -142,7 +142,7 @@ MonoBehaviour:
   Path: FMODBanks/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638111933754284244
+  lastModified: 638112001302052527
   FileSizes: []
   Exists: 1
 --- !u!114 &-213924622701883303
@@ -166,7 +166,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -726728400578374423}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -201,6 +201,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 116937
+--- !u!114 &-160697731928192588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/TurretPlaced
+  m_EditorClassIdentifier: 
+  Path: event:/TurretPlaced
+  Guid:
+    Data1: -435071239
+    Data2: 1139200266
+    Data3: -507509064
+    Data4: 603328300
+  Banks:
+  - {fileID: -726728400578374423}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1242
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,12 +254,14 @@ MonoBehaviour:
   - {fileID: 7883663584703686613}
   - {fileID: -3478506180275455080}
   - {fileID: -177675439896475513}
+  - {fileID: 6126270687555060566}
+  - {fileID: -160697731928192588}
   EditorParameters: []
   MasterBanks:
   - {fileID: -726728400578374423}
   StringsBanks:
   - {fileID: -4873056643976685593}
-  cacheTime: 638111933754304314
+  cacheTime: 638112001302096370
   cacheVersion: 131601
 --- !u!114 &35389423252389652
 MonoBehaviour:
@@ -255,7 +284,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -726728400578374423}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -309,7 +338,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -726728400578374423}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -336,12 +365,39 @@ MonoBehaviour:
   Banks:
   - {fileID: -726728400578374423}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 20
+  Length: 500
+--- !u!114 &6126270687555060566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Explosion
+  m_EditorClassIdentifier: 
+  Path: event:/Explosion
+  Guid:
+    Data1: -761807378
+    Data2: 1211022525
+    Data3: -1676568688
+    Data4: -517473607
+  Banks:
+  - {fileID: -726728400578374423}
+  IsStream: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 500
+  Length: 3605
 --- !u!114 &7883663584703686613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,7 +419,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -726728400578374423}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1

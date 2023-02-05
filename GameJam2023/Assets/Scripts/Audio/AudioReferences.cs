@@ -16,5 +16,7 @@ public class AudioReferences : MonoBehaviour
     public EventReference gameMusicEvent;
     public EventReference menuMusicEvent;
     public EventReference ambienceEvent;
+    public EventReference turretPlacedEvent;
+    public EventReference enemyExplodeEvent;
     
 }

@@ -49,7 +49,7 @@ public class AudioManager : MonoBehaviour
 
     public void OnDestroy()
     {
-        StartGameMusic();
+        StopGameMusic();
         StopAmbience();
     }
 }

@@ -144,7 +144,9 @@ public class Gameboard : MonoBehaviour
     {
         if(inventory.PlaceTree(cost))
         {
-            Instantiate(U.turrets[0], locationToPlace, Quaternion.identity);
+            var tree = Instantiate(U.turrets[0], locationToPlace, Quaternion.identity);
+            tree.tag = "Tree";
+            AudioPlayback.PlayOneShot(AudioManager.Instance.references.turretPlacedEvent, null);
         }
 
     }

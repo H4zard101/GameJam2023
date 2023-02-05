@@ -61,7 +61,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 20
   damage: 30
-  ammoType: 0
+  ammoType: 1
 --- !u!1001 &5009757648789317713
 PrefabInstance:
   m_ObjectHideFlags: 0

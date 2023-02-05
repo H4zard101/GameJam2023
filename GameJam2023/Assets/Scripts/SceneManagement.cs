@@ -8,7 +8,7 @@ public class SceneManagement : MonoBehaviour
 {
     public void SceneChange()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
 }
