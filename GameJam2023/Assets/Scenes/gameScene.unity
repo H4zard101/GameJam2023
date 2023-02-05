@@ -11272,7 +11272,7 @@ PrefabInstance:
     - target: {fileID: 102136290112536729, guid: 0612bb069b4597a40ac7f88c76a7d2f7, type: 3}
       propertyPath: turrets.Array.data[0]
       value: 
-      objectReference: {fileID: 6415938912303618557, guid: 5d5b188a5220c364dbe75c44ce27cd3c, type: 3}
+      objectReference: {fileID: 8808093835528765210, guid: 1269696b68a7ad44aa8a08fdf8ac592a, type: 3}
     - target: {fileID: 2387125469586537245, guid: 0612bb069b4597a40ac7f88c76a7d2f7, type: 3}
       propertyPath: m_Enabled
       value: 0

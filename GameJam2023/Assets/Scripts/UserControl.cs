@@ -62,6 +62,7 @@ public class UserControl : MonoBehaviour
                 if (Input.GetMouseButtonUp(0))
                 {
                     CheckUnitToSelect();
+                    SelectExistingUnit();
                 }
 
                 break;
@@ -71,6 +72,32 @@ public class UserControl : MonoBehaviour
                     PlaceUnit();
                 }
                 break;
+        }
+    }
+
+    private void SelectExistingUnit()
+    {
+        if (Gameboard.Instance.Raycast(cam.ScreenPointToRay(Input.mousePosition),
+            out Vector3Int clickedCell))
+        {
+            var unit = Gameboard.Instance.GetUnit(clickedCell);
+            if (unit == null)
+            {
+                TurrentUpgradeUI.SetActive(false);
+            }
+
+            if (unit.name.Contains("BaseTree"))
+            {
+                //do something on base tree click
+                TurrentUpgradeUI.SetActive(true);
+                m_SelectedUnit = unit;
+            }
+        }
+        else
+        {
+            Debug.LogWarning("clicked on : ");
+
+            TurrentUpgradeUI.SetActive(false);
         }
     }
 
@@ -142,7 +169,7 @@ public class UserControl : MonoBehaviour
 
     public void UpgradeLastSelectedUnit()
     {
-        if (GetComponent<Inventory20>().UpgradeTurret(100))
+        if (GetComponent<Inventory20>().UpgradeTurret(1))
         {
             Debug.LogWarning("upgrading");
 

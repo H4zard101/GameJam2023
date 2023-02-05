@@ -16,6 +16,8 @@ public class TreeSource : GameTrees
     public Transform EffectPoint;
     public GameObject pariclessSystem;
 
+    public GameObject[] treeLevels;
+
     private void Start()
     {
 
@@ -102,6 +104,36 @@ public class TreeSource : GameTrees
                 }
                 turretsUnderInfluence[treeSourceLevel - 1] = new_turret;
                 Health += HealthPerLevel;
+
+
+
+                switch (treeSourceLevel)
+                {
+                    case 1:
+                        treeLevels[0].SetActive(true);
+                        treeLevels[1].SetActive(false);
+                        treeLevels[2].SetActive(false);
+                        treeLevels[3].SetActive(false);
+                        break;
+                    case 2:
+                        treeLevels[0].SetActive(false);
+                        treeLevels[1].SetActive(true);
+                        treeLevels[2].SetActive(false);
+                        treeLevels[3].SetActive(false);
+                        break;
+                    case 3:
+                        treeLevels[0].SetActive(false);
+                        treeLevels[1].SetActive(false);
+                        treeLevels[2].SetActive(true);
+                        treeLevels[3].SetActive(false);
+                        break;
+                    case 4:
+                        treeLevels[0].SetActive(false);
+                        treeLevels[1].SetActive(false);
+                        treeLevels[2].SetActive(false);
+                        treeLevels[3].SetActive(true);
+                        break;
+                }
             }
         }
     }
