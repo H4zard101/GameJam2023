@@ -9,11 +9,13 @@ public class UIManager : MonoBehaviour
 
     public void PauseMenuShow()
     {
+        Time.timeScale = 0;
         pauseMenu.SetActive(true); 
     }
 
     public void PauseMenuClose()
     {
+        Time.timeScale = 1;
         pauseMenu.SetActive(false);
     }
 
@@ -35,5 +37,10 @@ public class UIManager : MonoBehaviour
     public void OpenCreditsScene()
     {
         SceneManager.LoadScene("Credits");
+    }
+
+    public void HowToPlay()
+    {
+        SceneManager.LoadScene("HowToPlay");
     }
 }

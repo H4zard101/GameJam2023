@@ -170,10 +170,10 @@ TextureImporter:
       name: sprite_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 2
-        width: 27
-        height: 29
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,10 +191,10 @@ TextureImporter:
       name: sprite_1
       rect:
         serializedVersion: 2
-        x: 36
-        y: 3
-        width: 23
-        height: 28
+        x: 32
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -212,10 +212,10 @@ TextureImporter:
       name: sprite_2
       rect:
         serializedVersion: 2
-        x: 67
-        y: 3
-        width: 26
-        height: 27
+        x: 64
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -233,10 +233,10 @@ TextureImporter:
       name: sprite_3
       rect:
         serializedVersion: 2
-        x: 105
-        y: 3
-        width: 18
-        height: 27
+        x: 96
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -254,10 +254,10 @@ TextureImporter:
       name: sprite_4
       rect:
         serializedVersion: 2
-        x: 133
-        y: 7
-        width: 25
-        height: 17
+        x: 128
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -275,10 +275,10 @@ TextureImporter:
       name: sprite_5
       rect:
         serializedVersion: 2
-        x: 169
-        y: 4
-        width: 16
-        height: 24
+        x: 160
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

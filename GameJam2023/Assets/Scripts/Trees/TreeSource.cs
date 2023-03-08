@@ -7,11 +7,13 @@ public class TreeSource : GameTrees
     public GameObject SourceTree;
     public GameObject turret_type;
     public GameObject[] turretsUnderInfluence;
-    private int treeSourceLevel = 0;
-    public float Health = 100;
+    public int treeSourceLevel = 0;
+    public float Health = 50f;
     public float HealthPerLevel = 50f;
     public float gridSize = 3f;
     private Vector3[] positions = new Vector3[4];
+
+    public string typeName;
 
     public Transform EffectPoint;
     public GameObject pariclessSystem;
@@ -53,6 +55,13 @@ public class TreeSource : GameTrees
         positions[3].z -= gridSize;
         positions[3].y = 0;
 
+        typeName = type;
+
+        if(type == "StandardTurret")
+        {
+            Health += 0.5f*Health;
+        }
+
         Upgrade(type);
     }
 
@@ -61,48 +70,58 @@ public class TreeSource : GameTrees
 
         if (turret_type != null)
         {
-            if (treeSourceLevel < 4)
+            treeSourceLevel += 1;
+
+
+            GameObject turretToInstantiate = turret_type;
+
+            //set turret type based on the UI Selection 
+            switch (turretType)
             {
-                treeSourceLevel += 1;
+                case "StandardTurret":
+                    Debug.LogWarning("SetTurret Called : StandardTurret");
+                    turretToInstantiate.GetComponent<TurretLockOn>().turretType = TurretLockOn.TurretType.StandardTurret;
+                    break;
+                case "SniperTurret":
+                    Debug.LogWarning("SetTurret Called : SniperTurret");
 
+                    turretToInstantiate.GetComponent<TurretLockOn>().turretType = TurretLockOn.TurretType.SniperTurret;
+                    break;
+                case "RapidFireTurret":
+                    Debug.LogWarning("SetTurret Called : RapidFireTurret");
 
-                GameObject turretToInstantiate = turret_type;
+                    turretToInstantiate.GetComponent<TurretLockOn>().turretType = TurretLockOn.TurretType.RapidFireTurret;
+                    break;
+                default:
+                    Debug.LogWarning("SetTurret Called : d");
+                    turretToInstantiate.GetComponent<TurretLockOn>().turretType = TurretLockOn.TurretType.StandardTurret;
+                    break;
+            }
 
-                //set turret type based on the UI Selection 
-                switch (turretType)
-                {
-                    case "StandardTurret":
-                        Debug.LogWarning("SetTurret Called : StandardTurret");
-
-                        turretToInstantiate.GetComponent<TurretLockOn>().turretType = TurretLockOn.TurretType.StandardTurret;
-                        break;
-                    case "SniperTurret":
-                        Debug.LogWarning("SetTurret Called : SniperTurret");
-
-                        turretToInstantiate.GetComponent<TurretLockOn>().turretType = TurretLockOn.TurretType.SniperTurret;
-                        break;
-                    case "RapidFireTurret":
-                        Debug.LogWarning("SetTurret Called : RapidFireTurret");
-
-                        turretToInstantiate.GetComponent<TurretLockOn>().turretType = TurretLockOn.TurretType.RapidFireTurret;
-                        break;
-                    default:
-                        Debug.LogWarning("SetTurret Called : d");
-
-                        turretToInstantiate.GetComponent<TurretLockOn>().turretType = TurretLockOn.TurretType.StandardTurret;
-                        break;
-                }
-
-
+            if(treeSourceLevel < 4)
+            {
                 GameObject new_turret = Instantiate(turretToInstantiate, positions[treeSourceLevel - 1], Quaternion.identity);
+                turretsUnderInfluence[treeSourceLevel - 1] = new_turret;
                 if (new_turret == null)
                 {
                     Debug.LogWarning("turret is null");
-
                 }
-                turretsUnderInfluence[treeSourceLevel - 1] = new_turret;
-                Health += HealthPerLevel;
             }
+
+            if(treeSourceLevel > 1)
+            {
+                if(turretType == "StandardTurret")
+                {
+                    Health += 1.5f*HealthPerLevel;
+                }
+                else
+                {
+                    Health += HealthPerLevel;
+                }
+                
+            }
+            
+                
         }
     }
     public override void TakeDamage(float damage)

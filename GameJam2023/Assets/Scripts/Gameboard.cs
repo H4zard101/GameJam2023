@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Gameboard : MonoBehaviour
 {
@@ -13,7 +14,8 @@ public class Gameboard : MonoBehaviour
     public int Height;
 
     private int turn_num = 1;
-    private int timer = 0;
+    public int timer = 0;
+    public Slider timerTurn; 
     private float subtimer = 0;
 
     public GameObject[] all_spawners;
@@ -33,10 +35,12 @@ public class Gameboard : MonoBehaviour
 
     [SerializeField] private ResourceUI resourceUI;
     [SerializeField] private TurnUI turnUI;
+    [SerializeField] private TMP_Text longestRunUI;
 
     public GameObject MotherTree;
 
-    public int cost = 5;
+    public int cost = 1;
+    public GameObject notEnoughText;
     
     public int treesPlanted = 0;
 
@@ -56,14 +60,31 @@ public class Gameboard : MonoBehaviour
     private void Start()
     {
         UpdateTurnIndicator();
+
+        Shuffle();
         all_spawners[0].SetActive(true);
+        longestRunUI.text = PlayerPrefs.GetInt("LongestRun").ToString();
     }
+
+    public void Shuffle() 
+    {
+        GameObject tempGO;
+
+         for (int i = 0; i < all_spawners.Length; i++)
+         {
+             int rnd = UnityEngine.Random.Range(0, all_spawners.Length);
+             tempGO = all_spawners[rnd];
+             all_spawners[rnd] = all_spawners[i];
+             all_spawners[i] = tempGO;
+         }
+     }
 
     private void Update()
     {
         m_AnimSystem.Update();
 
         subtimer += Time.deltaTime;
+        
 
         if (subtimer > 1)
         {
@@ -71,22 +92,60 @@ public class Gameboard : MonoBehaviour
             subtimer = 0;
         }
 
-        if (timer % 30 == 0 && timer > 0)
+        timerTurn.value = (float)(timer % 20);
+
+        if (timer % 20 == 0 && timer > 0)
         {
             turn_num += 1;
             UpdateTurnIndicator();
+            longestRunUI.text = PlayerPrefs.GetInt("LongestRun").ToString();
+
+            PlayerPrefs.SetInt("TurnNumber", turn_num);
+
+            if(PlayerPrefs.HasKey("LongestRun") == false)
+            {
+                PlayerPrefs.SetInt("LongestRun", turn_num);
+            }
+            else if(PlayerPrefs.GetInt("LongestRun") < PlayerPrefs.GetInt("TurnNumber"))
+            {
+                PlayerPrefs.SetInt("LongestRun", turn_num);
+            }
+
             timer += 1;
 
-            if (turn_num == 13)
+            for(int i = 0; i < all_spawners.Length; i++)
+            {
+                if(Mathf.Floor(turn_num / 1.5f) >= (int)i)
+                {
+                    all_spawners[i].SetActive(true);
+                }
+            }
+
+            
+
+            if (turn_num > 20)
             {
                 foreach(GameObject spawner in all_spawners)
                 {
-                    spawner.GetComponent<AISpawner>().spawnInterval = 0.5f;
+                    spawner.GetComponent<AISpawner>().spawnInterval = Mathf.Clamp(0.5f-(0.01f*(turn_num-21)), 0.1f, 0.5f);
+                    inventory.SetWaterTime(Mathf.Clamp(30+(0.5f*turn_num-21),30,60));
+                }
+            }
+            else if (turn_num > 10)
+            {
+                foreach(GameObject spawner in all_spawners)
+                {
+                    spawner.GetComponent<AISpawner>().spawnInterval = Mathf.Clamp(1f-(0.05f*(turn_num-11)), 0.5f, 1f);
+                    inventory.SetWaterTime(20+(1*turn_num-1));
                 }
             }
             else
             {
-                all_spawners[turn_num - 1].SetActive(true);
+                foreach(GameObject spawner in all_spawners)
+                {
+                    spawner.GetComponent<AISpawner>().spawnInterval = Mathf.Clamp(2f-(0.1f*(turn_num-1)), 1f, 2f);
+                    inventory.SetWaterTime(10+(1*turn_num-1));
+                }
             }
         }
     }
@@ -180,33 +239,41 @@ public class Gameboard : MonoBehaviour
 
     public void PlaceUnit(Unit U, Vector3Int locationToPlace)
     {
-        if(inventory.PlaceTree(cost))
-        {
-            lastUnit = U;
-            lastLocationToPlace = locationToPlace;
-            TreePlacementUI.SetActive(true);
-        }
 
+        lastUnit = U;
+        lastLocationToPlace = locationToPlace;
+        TreePlacementUI.SetActive(true);
     }
+
 
     public void SelectedTreeAndTurret(string type)
     {
-        Debug.LogWarning("Turret Type : " + type);
+        if(inventory.PlaceTree(cost))
+        {
+            Debug.LogWarning("Turret Type : " + type);
 
-        var tree = Instantiate(lastUnit.turrets[0], lastLocationToPlace, Quaternion.identity);
-        tree.GetComponent<TreeSource>().SetTurret(type);
-        TreePlacementUI.SetActive(false);
+            var tree = Instantiate(lastUnit.turrets[0], lastLocationToPlace, Quaternion.identity);
+            tree.GetComponent<TreeSource>().SetTurret(type);
+            TreePlacementUI.SetActive(false);
 
-        TreeManager.instance.allTrees.Add(tree);
-        tree.tag = "Tree";
-        AudioPlayback.PlayOneShot(AudioManager.Instance.references.turretPlacedEvent, null);
-        treesPlanted += 1;
-        //AudioManager.Instance.parameters.SetParamByName(AudioManager.Instance.musicInstance, "TreeCount", treesPlanted);
+            TreeManager.instance.allTrees.Add(tree);
+            tree.tag = "Tree";
+            AudioPlayback.PlayOneShot(AudioManager.Instance.references.turretPlacedEvent, null);
+            treesPlanted += 1;
+            //AudioManager.Instance.parameters.SetParamByName(AudioManager.Instance.musicInstance, "TreeCount", treesPlanted);
 
-        tree.gameObject.GetComponent<TreeRoots>().start = MotherTree;
-        tree.gameObject.GetComponent<TreeRoots>().end = tree;
-        tree.gameObject.GetComponent<TreeRoots>().Grow();
-        Debug.Log("Tree count" + treesPlanted);
+            tree.gameObject.GetComponent<TreeRoots>().start = MotherTree;
+            tree.gameObject.GetComponent<TreeRoots>().end = tree;
+            tree.gameObject.GetComponent<TreeRoots>().Grow();
+
+            inventory.PayWater(cost);
+            Debug.Log("Tree count" + treesPlanted);
+        }
+        else
+        {
+            StartCoroutine("ShowNotEnough");
+            TreePlacementUI.SetActive(false);
+        }    
     }
 
 
@@ -234,5 +301,12 @@ public class Gameboard : MonoBehaviour
         }
         
         Gizmos.DrawLine(Vector3.forward * Height, Vector3.forward * Height + Vector3.right * Width);
+    }
+
+    IEnumerator ShowNotEnough()
+    {
+        notEnoughText.SetActive(true);
+        yield return new WaitForSeconds(2);
+        notEnoughText.SetActive(false);
     }
 }

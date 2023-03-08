@@ -8,6 +8,42 @@ public class TreeUnit : Unit
 
     public int Distance;
     public GameObject[] spawnableTurrets;
+
+    public float GetHealth_TreeSource()
+    {
+        if(gameObject.GetComponent<TreeSource>() != null)
+        {
+            return gameObject.GetComponent<TreeSource>().Health;
+        }
+        else
+        {
+            return 0f;
+        }     
+    }
+
+    public float GetLevel_TreeSource()
+    {
+        if(gameObject.GetComponent<TreeSource>() != null)
+        {
+            return gameObject.GetComponent<TreeSource>().treeSourceLevel;
+        }
+        else
+        {
+            return 0f;
+        }
+    }
+
+    public string GetTurretType_TreeSource()
+    {
+        if(gameObject.GetComponent<TreeSource>() != null)
+        {
+            return gameObject.GetComponent<TreeSource>().typeName;
+        }
+        else
+        {
+            return "null";
+        }
+    }
     
     public override int GetMoveCells(Vector3Int[] result, Gameboard board)
     {

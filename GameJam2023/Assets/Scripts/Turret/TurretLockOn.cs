@@ -49,7 +49,7 @@ public class TurretLockOn : MonoBehaviour
         if (turretType == TurretType.RapidFireTurret)
         {
             range = 10.0f;
-            fireRate = 2.0f;
+            fireRate = 3.0f;
             bulletPrefab = carrotBullet;
             standard.SetActive(false);
             rapid.SetActive(true);
@@ -57,8 +57,8 @@ public class TurretLockOn : MonoBehaviour
         }
         if (turretType == TurretType.SniperTurret)
         {
-            range = 30.0f;
-            fireRate = 0.5f;
+            range = 40.0f;
+            fireRate = 0.75f;
             bulletPrefab = raddishBullet;
             standard.SetActive(false);
             rapid.SetActive(false);

@@ -41,26 +41,30 @@ public class AISpawner : MonoBehaviour
             float f = (float)scaled;
 
             //Debug.Log("value: " + Math.Abs(f));
-            if (Math.Abs(f) > 0.2f && Math.Abs(f) <= 0.4f)
+            if (Math.Abs(f) > 0.25f && Math.Abs(f) <= 0.5f)
             {
                 Debug.LogWarning("Spawning : " + EnemyType.Rabbit);
                 Instantiate(enemies[0], transform.position, transform.rotation);
             }
-            if (Math.Abs(f) > 0.15f && Math.Abs(f) <= 0.2f)
+            else
             {
-                Debug.LogWarning("Spawning : " + EnemyType.Beaver);
-                //Instantiate(enemies[1], transform.position, transform.rotation);
+                Debug.LogWarning("Spawning Nothing");
             }
-            if (Math.Abs(f) > 0.05f && Math.Abs(f) <= 0.15f)
-            {
-                Debug.LogWarning("Spawning : " + EnemyType.Moles);
-                //Instantiate(enemies[2], transform.position, transform.rotation);
-            }
-            if (Math.Abs(f) > 0.0f && Math.Abs(f) <= 0.05f)
-            {
-                Debug.LogWarning("Spawning : " + EnemyType.Woodpecker);
-                //Instantiate(enemies[3], transform.position, transform.rotation);
-            }
+            // if (Math.Abs(f) > 0.15f && Math.Abs(f) <= 0.2f)
+            // {
+            //     Debug.LogWarning("Spawning : " + EnemyType.Beaver);
+            //     //Instantiate(enemies[1], transform.position, transform.rotation);
+            // }
+            // if (Math.Abs(f) > 0.05f && Math.Abs(f) <= 0.15f)
+            // {
+            //     Debug.LogWarning("Spawning : " + EnemyType.Moles);
+            //     //Instantiate(enemies[2], transform.position, transform.rotation);
+            // }
+            // if (Math.Abs(f) > 0.0f && Math.Abs(f) <= 0.05f)
+            // {
+            //     Debug.LogWarning("Spawning : " + EnemyType.Woodpecker);
+            //     //Instantiate(enemies[3], transform.position, transform.rotation);
+            // }
         }
 
     }
